@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = MatrimonialCapstoneTest
-build_property.ProjectDir = C:\Users\VC\Documents\Intern Training\Capstone\MatrimonialCapstoneSolution\MatrimonialCapstoneTest\
+build_property.ProjectDir = C:\Users\VC\Documents\Capstone\MatrimonialCapstoneSolution\MatrimonialCapstoneTest\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

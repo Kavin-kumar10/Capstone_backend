@@ -1,4 +1,5 @@
 using MatrimonialCapstoneApplication.Context;
+using MatrimonialCapstoneApplication.Interfaces;
 using MatrimonialCapstoneApplication.Modals;
 using MatrimonialCapstoneApplication.Repositories;
 using Microsoft.EntityFrameworkCore;
@@ -11,7 +12,7 @@ namespace MatrimonialCapstoneTest.RepositoryTest
     public class MemberRepositoryTests
     {
         private MatrimonialContext _context;
-        private MemberRepository _repository;
+        private IRepository<int,Member> _repository;
 
         [SetUp]
         public void Setup()

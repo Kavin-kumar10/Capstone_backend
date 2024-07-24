@@ -1,6 +1,7 @@
 using MatrimonialCapstoneApplication.Context;
 using MatrimonialCapstoneApplication.Interfaces;
 using MatrimonialCapstoneApplication.Modals;
+using MatrimonialCapstoneApplication.Models;
 using MatrimonialCapstoneApplication.Repositories;
 using MatrimonialCapstoneApplication.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -69,12 +70,20 @@ namespace MatrimonialCapstoneApplication
 
             builder.Services.AddDbContext<MatrimonialContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("defaultString")));
             builder.Services.AddScoped<IUserServices, UserServices>();
+            builder.Services.AddScoped<IServices<int,Member>, MemberServices>();
+            builder.Services.AddScoped<IServices<int, Picture>, PictureServices>();
             builder.Services.AddScoped<IRepository<int, User>, UserRepository>();
+            builder.Services.AddScoped<IRepository<int, Picture>, PictureRepository>();
             builder.Services.AddScoped<IRepository<int, Member>, MemberRepository>();
             builder.Services.AddScoped<ITokenService, TokenService>();
             builder.Services.AddScoped<IUserRepository, UserRepository>();
 
             builder.Services.AddSwaggerGen();
+
+            builder.Services.AddCors(p => p.AddPolicy("corspolicy", build =>
+            {
+                build.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
+            }));
 
             var app = builder.Build();
 
@@ -84,6 +93,9 @@ namespace MatrimonialCapstoneApplication
                 app.UseSwagger();
                 app.UseSwaggerUI();
             }
+
+            app.UseCors("corspolicy");
+
 
             app.UseHttpsRedirection();
 
