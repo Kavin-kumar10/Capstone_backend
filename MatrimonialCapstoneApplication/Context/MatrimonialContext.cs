@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using MatrimonialCapstoneApplication.Modals;
+using Microsoft.EntityFrameworkCore;
 
 namespace MatrimonialCapstoneApplication.Context
 {
@@ -7,5 +8,7 @@ namespace MatrimonialCapstoneApplication.Context
         public MatrimonialContext(DbContextOptions<MatrimonialContext> options): base(options) { 
         
         }
+        public DbSet<Member> Members { get; set; }
+        public DbSet<User> Users { get; set; }
     }
 }
