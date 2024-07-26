@@ -82,6 +82,7 @@ namespace MatrimonialCapstoneApplication.Services
                     throw new Exception("Not created");
                 }
                 user.MemberId = newMember.MemberId;
+                user.Name = newMember.Name;
                 var newUser = await _repo.Create(user);
                 if (newUser == null)
                 {

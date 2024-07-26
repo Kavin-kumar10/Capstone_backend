@@ -1,4 +1,5 @@
 ﻿using MatrimonialCapstoneApplication.Modals;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text.Json.Serialization;
 
@@ -6,12 +7,13 @@ namespace MatrimonialCapstoneApplication.Models
 {
     public class Picture
     {
+        [Key]
         public int PictureId { get; set; }
         public string PictureUrl { get; set; }
 
-        [ForeignKey("MemberId")]
-        public int MemberId { get; set; }
+        [ForeignKey("PersonalDetailsId")]
+        public int PersonalDetailsId { get; set; }
         [JsonIgnore]
-        public Member Member { get; set; }
+        public PersonalDetails? PersonalDetails { get; set; }
     }
 }

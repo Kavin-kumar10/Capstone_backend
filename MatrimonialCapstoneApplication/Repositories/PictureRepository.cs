@@ -7,6 +7,7 @@ namespace MatrimonialCapstoneApplication.Repositories
     {
         public PictureRepository(MatrimonialContext context) : base(context)
         {
+
         }
     }
 }

@@ -3,88 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\VC\\Documents\\Capstone\\MatrimonialCapstoneSolution\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{575CB106-3718-4EA9-9E2A-2B66C63AA00F}|MatrimonialCapstoneApplication\\MatrimonialCapstoneApplication.csproj|c:\\users\\vc\\documents\\capstone\\matrimonialcapstonesolution\\matrimonialcapstoneapplication\\controllers\\membercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{575CB106-3718-4EA9-9E2A-2B66C63AA00F}|MatrimonialCapstoneApplication\\MatrimonialCapstoneApplication.csproj|solutionrelative:matrimonialcapstoneapplication\\controllers\\membercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{575CB106-3718-4EA9-9E2A-2B66C63AA00F}|MatrimonialCapstoneApplication\\MatrimonialCapstoneApplication.csproj|c:\\users\\vc\\documents\\capstone\\matrimonialcapstonesolution\\matrimonialcapstoneapplication\\context\\matrimonialcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{575CB106-3718-4EA9-9E2A-2B66C63AA00F}|MatrimonialCapstoneApplication\\MatrimonialCapstoneApplication.csproj|solutionrelative:matrimonialcapstoneapplication\\context\\matrimonialcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{575CB106-3718-4EA9-9E2A-2B66C63AA00F}|MatrimonialCapstoneApplication\\MatrimonialCapstoneApplication.csproj|c:\\users\\vc\\documents\\capstone\\matrimonialcapstonesolution\\matrimonialcapstoneapplication\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{575CB106-3718-4EA9-9E2A-2B66C63AA00F}|MatrimonialCapstoneApplication\\MatrimonialCapstoneApplication.csproj|solutionrelative:matrimonialcapstoneapplication\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{575CB106-3718-4EA9-9E2A-2B66C63AA00F}|MatrimonialCapstoneApplication\\MatrimonialCapstoneApplication.csproj|c:\\users\\vc\\documents\\capstone\\matrimonialcapstonesolution\\matrimonialcapstoneapplication\\repositories\\memberrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{575CB106-3718-4EA9-9E2A-2B66C63AA00F}|MatrimonialCapstoneApplication\\MatrimonialCapstoneApplication.csproj|solutionrelative:matrimonialcapstoneapplication\\repositories\\memberrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{575CB106-3718-4EA9-9E2A-2B66C63AA00F}|MatrimonialCapstoneApplication\\MatrimonialCapstoneApplication.csproj|c:\\users\\vc\\documents\\capstone\\matrimonialcapstonesolution\\matrimonialcapstoneapplication\\repositories\\dailylogsrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{575CB106-3718-4EA9-9E2A-2B66C63AA00F}|MatrimonialCapstoneApplication\\MatrimonialCapstoneApplication.csproj|solutionrelative:matrimonialcapstoneapplication\\repositories\\dailylogsrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{575CB106-3718-4EA9-9E2A-2B66C63AA00F}|MatrimonialCapstoneApplication\\MatrimonialCapstoneApplication.csproj|c:\\users\\vc\\documents\\capstone\\matrimonialcapstonesolution\\matrimonialcapstoneapplication\\repositories\\picturerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{575CB106-3718-4EA9-9E2A-2B66C63AA00F}|MatrimonialCapstoneApplication\\MatrimonialCapstoneApplication.csproj|solutionrelative:matrimonialcapstoneapplication\\repositories\\picturerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{575CB106-3718-4EA9-9E2A-2B66C63AA00F}|MatrimonialCapstoneApplication\\MatrimonialCapstoneApplication.csproj|c:\\users\\vc\\documents\\capstone\\matrimonialcapstonesolution\\matrimonialcapstoneapplication\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{575CB106-3718-4EA9-9E2A-2B66C63AA00F}|MatrimonialCapstoneApplication\\MatrimonialCapstoneApplication.csproj|solutionrelative:matrimonialcapstoneapplication\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{575CB106-3718-4EA9-9E2A-2B66C63AA00F}|MatrimonialCapstoneApplication\\MatrimonialCapstoneApplication.csproj|c:\\users\\vc\\documents\\capstone\\matrimonialcapstonesolution\\matrimonialcapstoneapplication\\repositories\\verificationrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{575CB106-3718-4EA9-9E2A-2B66C63AA00F}|MatrimonialCapstoneApplication\\MatrimonialCapstoneApplication.csproj|solutionrelative:matrimonialcapstoneapplication\\repositories\\verificationrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{575CB106-3718-4EA9-9E2A-2B66C63AA00F}|MatrimonialCapstoneApplication\\MatrimonialCapstoneApplication.csproj|c:\\users\\vc\\documents\\capstone\\matrimonialcapstonesolution\\matrimonialcapstoneapplication\\repositories\\likerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{575CB106-3718-4EA9-9E2A-2B66C63AA00F}|MatrimonialCapstoneApplication\\MatrimonialCapstoneApplication.csproj|solutionrelative:matrimonialcapstoneapplication\\repositories\\likerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D9F5790F-B6CD-412F-8100-D5BDB52FF1BF}|MatrimonialCapstoneTest\\MatrimonialCapstoneTest.csproj|c:\\users\\vc\\documents\\capstone\\matrimonialcapstonesolution\\matrimonialcapstonetest\\servicetest\\memberservicetest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D9F5790F-B6CD-412F-8100-D5BDB52FF1BF}|MatrimonialCapstoneTest\\MatrimonialCapstoneTest.csproj|solutionrelative:matrimonialcapstonetest\\servicetest\\memberservicetest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D9F5790F-B6CD-412F-8100-D5BDB52FF1BF}|MatrimonialCapstoneTest\\MatrimonialCapstoneTest.csproj|c:\\users\\vc\\documents\\capstone\\matrimonialcapstonesolution\\matrimonialcapstonetest\\repositorytest\\memberrepositorytest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D9F5790F-B6CD-412F-8100-D5BDB52FF1BF}|MatrimonialCapstoneTest\\MatrimonialCapstoneTest.csproj|solutionrelative:matrimonialcapstonetest\\repositorytest\\memberrepositorytest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{575CB106-3718-4EA9-9E2A-2B66C63AA00F}|MatrimonialCapstoneApplication\\MatrimonialCapstoneApplication.csproj|c:\\users\\vc\\documents\\capstone\\matrimonialcapstonesolution\\matrimonialcapstoneapplication\\services\\memberservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{575CB106-3718-4EA9-9E2A-2B66C63AA00F}|MatrimonialCapstoneApplication\\MatrimonialCapstoneApplication.csproj|solutionrelative:matrimonialcapstoneapplication\\services\\memberservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D9F5790F-B6CD-412F-8100-D5BDB52FF1BF}|MatrimonialCapstoneTest\\MatrimonialCapstoneTest.csproj|c:\\users\\vc\\documents\\capstone\\matrimonialcapstonesolution\\matrimonialcapstonetest\\repositorytest\\userrepositorytest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D9F5790F-B6CD-412F-8100-D5BDB52FF1BF}|MatrimonialCapstoneTest\\MatrimonialCapstoneTest.csproj|solutionrelative:matrimonialcapstonetest\\repositorytest\\userrepositorytest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{575CB106-3718-4EA9-9E2A-2B66C63AA00F}|MatrimonialCapstoneApplication\\MatrimonialCapstoneApplication.csproj|c:\\users\\vc\\documents\\capstone\\matrimonialcapstonesolution\\matrimonialcapstoneapplication\\services\\baseservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{575CB106-3718-4EA9-9E2A-2B66C63AA00F}|MatrimonialCapstoneApplication\\MatrimonialCapstoneApplication.csproj|solutionrelative:matrimonialcapstoneapplication\\services\\baseservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D9F5790F-B6CD-412F-8100-D5BDB52FF1BF}|MatrimonialCapstoneTest\\MatrimonialCapstoneTest.csproj|c:\\users\\vc\\documents\\capstone\\matrimonialcapstonesolution\\matrimonialcapstonetest\\servicetest\\userservicetest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D9F5790F-B6CD-412F-8100-D5BDB52FF1BF}|MatrimonialCapstoneTest\\MatrimonialCapstoneTest.csproj|solutionrelative:matrimonialcapstonetest\\servicetest\\userservicetest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{575CB106-3718-4EA9-9E2A-2B66C63AA00F}|MatrimonialCapstoneApplication\\MatrimonialCapstoneApplication.csproj|c:\\users\\vc\\documents\\capstone\\matrimonialcapstonesolution\\matrimonialcapstoneapplication\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{575CB106-3718-4EA9-9E2A-2B66C63AA00F}|MatrimonialCapstoneApplication\\MatrimonialCapstoneApplication.csproj|solutionrelative:matrimonialcapstoneapplication\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{575CB106-3718-4EA9-9E2A-2B66C63AA00F}|MatrimonialCapstoneApplication\\MatrimonialCapstoneApplication.csproj|c:\\users\\vc\\documents\\capstone\\matrimonialcapstonesolution\\matrimonialcapstoneapplication\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{575CB106-3718-4EA9-9E2A-2B66C63AA00F}|MatrimonialCapstoneApplication\\MatrimonialCapstoneApplication.csproj|solutionrelative:matrimonialcapstoneapplication\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{575CB106-3718-4EA9-9E2A-2B66C63AA00F}|MatrimonialCapstoneApplication\\MatrimonialCapstoneApplication.csproj|c:\\users\\vc\\documents\\capstone\\matrimonialcapstonesolution\\matrimonialcapstoneapplication\\controllers\\picturecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{575CB106-3718-4EA9-9E2A-2B66C63AA00F}|MatrimonialCapstoneApplication\\MatrimonialCapstoneApplication.csproj|solutionrelative:matrimonialcapstoneapplication\\controllers\\picturecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{575CB106-3718-4EA9-9E2A-2B66C63AA00F}|MatrimonialCapstoneApplication\\MatrimonialCapstoneApplication.csproj|c:\\users\\vc\\documents\\capstone\\matrimonialcapstonesolution\\matrimonialcapstoneapplication\\models\\like.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{575CB106-3718-4EA9-9E2A-2B66C63AA00F}|MatrimonialCapstoneApplication\\MatrimonialCapstoneApplication.csproj|solutionrelative:matrimonialcapstoneapplication\\models\\like.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{575CB106-3718-4EA9-9E2A-2B66C63AA00F}|MatrimonialCapstoneApplication\\MatrimonialCapstoneApplication.csproj|c:\\users\\vc\\documents\\capstone\\matrimonialcapstonesolution\\matrimonialcapstoneapplication\\context\\matrimonialcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{575CB106-3718-4EA9-9E2A-2B66C63AA00F}|MatrimonialCapstoneApplication\\MatrimonialCapstoneApplication.csproj|solutionrelative:matrimonialcapstoneapplication\\context\\matrimonialcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{575CB106-3718-4EA9-9E2A-2B66C63AA00F}|MatrimonialCapstoneApplication\\MatrimonialCapstoneApplication.csproj|c:\\users\\vc\\documents\\capstone\\matrimonialcapstonesolution\\matrimonialcapstoneapplication\\models\\picture.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{575CB106-3718-4EA9-9E2A-2B66C63AA00F}|MatrimonialCapstoneApplication\\MatrimonialCapstoneApplication.csproj|solutionrelative:matrimonialcapstoneapplication\\models\\picture.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{575CB106-3718-4EA9-9E2A-2B66C63AA00F}|MatrimonialCapstoneApplication\\MatrimonialCapstoneApplication.csproj|c:\\users\\vc\\documents\\capstone\\matrimonialcapstonesolution\\matrimonialcapstoneapplication\\models\\member.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{575CB106-3718-4EA9-9E2A-2B66C63AA00F}|MatrimonialCapstoneApplication\\MatrimonialCapstoneApplication.csproj|solutionrelative:matrimonialcapstoneapplication\\models\\member.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{575CB106-3718-4EA9-9E2A-2B66C63AA00F}|MatrimonialCapstoneApplication\\MatrimonialCapstoneApplication.csproj|c:\\users\\vc\\documents\\capstone\\matrimonialcapstonesolution\\matrimonialcapstoneapplication\\models\\hobby.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{575CB106-3718-4EA9-9E2A-2B66C63AA00F}|MatrimonialCapstoneApplication\\MatrimonialCapstoneApplication.csproj|solutionrelative:matrimonialcapstoneapplication\\models\\hobby.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{575CB106-3718-4EA9-9E2A-2B66C63AA00F}|MatrimonialCapstoneApplication\\MatrimonialCapstoneApplication.csproj|c:\\users\\vc\\documents\\capstone\\matrimonialcapstonesolution\\matrimonialcapstoneapplication\\models\\dailylog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{575CB106-3718-4EA9-9E2A-2B66C63AA00F}|MatrimonialCapstoneApplication\\MatrimonialCapstoneApplication.csproj|solutionrelative:matrimonialcapstoneapplication\\models\\dailylog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -94,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 17,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -106,270 +38,55 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MatrimonialContext.cs",
+              "DocumentMoniker": "C:\\Users\\VC\\Documents\\Capstone\\MatrimonialCapstoneSolution\\MatrimonialCapstoneApplication\\Context\\MatrimonialContext.cs",
+              "RelativeDocumentMoniker": "MatrimonialCapstoneApplication\\Context\\MatrimonialContext.cs",
+              "ToolTip": "C:\\Users\\VC\\Documents\\Capstone\\MatrimonialCapstoneSolution\\MatrimonialCapstoneApplication\\Context\\MatrimonialContext.cs",
+              "RelativeToolTip": "MatrimonialCapstoneApplication\\Context\\MatrimonialContext.cs",
+              "ViewState": "AQIAAC4AAAAAAAAAAAAUwD8AAAAqAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-26T11:02:22.917Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\VC\\Documents\\Capstone\\MatrimonialCapstoneSolution\\MatrimonialCapstoneApplication\\Program.cs",
               "RelativeDocumentMoniker": "MatrimonialCapstoneApplication\\Program.cs",
               "ToolTip": "C:\\Users\\VC\\Documents\\Capstone\\MatrimonialCapstoneSolution\\MatrimonialCapstoneApplication\\Program.cs",
               "RelativeToolTip": "MatrimonialCapstoneApplication\\Program.cs",
-              "ViewState": "AQIAAFUAAAAAAAAAAAAAwGQAAAAAAAAA",
+              "ViewState": "AQIAAEsAAAAAAAAAAAAgwGIAAABVAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-24T15:25:26.233Z",
+              "WhenOpened": "2024-07-26T11:01:39.579Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "MemberRepository.cs",
-              "DocumentMoniker": "C:\\Users\\VC\\Documents\\Capstone\\MatrimonialCapstoneSolution\\MatrimonialCapstoneApplication\\Repositories\\MemberRepository.cs",
-              "RelativeDocumentMoniker": "MatrimonialCapstoneApplication\\Repositories\\MemberRepository.cs",
-              "ToolTip": "C:\\Users\\VC\\Documents\\Capstone\\MatrimonialCapstoneSolution\\MatrimonialCapstoneApplication\\Repositories\\MemberRepository.cs",
-              "RelativeToolTip": "MatrimonialCapstoneApplication\\Repositories\\MemberRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
+              "Title": "DailyLogsRepository.cs",
+              "DocumentMoniker": "C:\\Users\\VC\\Documents\\Capstone\\MatrimonialCapstoneSolution\\MatrimonialCapstoneApplication\\Repositories\\DailyLogsRepository.cs",
+              "RelativeDocumentMoniker": "MatrimonialCapstoneApplication\\Repositories\\DailyLogsRepository.cs",
+              "ToolTip": "C:\\Users\\VC\\Documents\\Capstone\\MatrimonialCapstoneSolution\\MatrimonialCapstoneApplication\\Repositories\\DailyLogsRepository.cs",
+              "RelativeToolTip": "MatrimonialCapstoneApplication\\Repositories\\DailyLogsRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAeAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-24T14:17:08.156Z",
+              "WhenOpened": "2024-07-26T11:01:04.114Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "PictureRepository.cs",
-              "DocumentMoniker": "C:\\Users\\VC\\Documents\\Capstone\\MatrimonialCapstoneSolution\\MatrimonialCapstoneApplication\\Repositories\\PictureRepository.cs",
-              "RelativeDocumentMoniker": "MatrimonialCapstoneApplication\\Repositories\\PictureRepository.cs",
-              "ToolTip": "C:\\Users\\VC\\Documents\\Capstone\\MatrimonialCapstoneSolution\\MatrimonialCapstoneApplication\\Repositories\\PictureRepository.cs",
-              "RelativeToolTip": "MatrimonialCapstoneApplication\\Repositories\\PictureRepository.cs",
+              "Title": "DailyLog.cs",
+              "DocumentMoniker": "C:\\Users\\VC\\Documents\\Capstone\\MatrimonialCapstoneSolution\\MatrimonialCapstoneApplication\\Models\\DailyLog.cs",
+              "RelativeDocumentMoniker": "MatrimonialCapstoneApplication\\Models\\DailyLog.cs",
+              "ToolTip": "C:\\Users\\VC\\Documents\\Capstone\\MatrimonialCapstoneSolution\\MatrimonialCapstoneApplication\\Models\\DailyLog.cs",
+              "RelativeToolTip": "MatrimonialCapstoneApplication\\Models\\DailyLog.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-24T14:17:07.385Z",
+              "WhenOpened": "2024-07-26T11:00:51.685Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "UserRepository.cs",
-              "DocumentMoniker": "C:\\Users\\VC\\Documents\\Capstone\\MatrimonialCapstoneSolution\\MatrimonialCapstoneApplication\\Repositories\\UserRepository.cs",
-              "RelativeDocumentMoniker": "MatrimonialCapstoneApplication\\Repositories\\UserRepository.cs",
-              "ToolTip": "C:\\Users\\VC\\Documents\\Capstone\\MatrimonialCapstoneSolution\\MatrimonialCapstoneApplication\\Repositories\\UserRepository.cs",
-              "RelativeToolTip": "MatrimonialCapstoneApplication\\Repositories\\UserRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-24T14:17:06.724Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "VerificationRepository.cs",
-              "DocumentMoniker": "C:\\Users\\VC\\Documents\\Capstone\\MatrimonialCapstoneSolution\\MatrimonialCapstoneApplication\\Repositories\\VerificationRepository.cs",
-              "RelativeDocumentMoniker": "MatrimonialCapstoneApplication\\Repositories\\VerificationRepository.cs",
-              "ToolTip": "C:\\Users\\VC\\Documents\\Capstone\\MatrimonialCapstoneSolution\\MatrimonialCapstoneApplication\\Repositories\\VerificationRepository.cs",
-              "RelativeToolTip": "MatrimonialCapstoneApplication\\Repositories\\VerificationRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-24T14:06:51.331Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "LikeRepository.cs",
-              "DocumentMoniker": "C:\\Users\\VC\\Documents\\Capstone\\MatrimonialCapstoneSolution\\MatrimonialCapstoneApplication\\Repositories\\LikeRepository.cs",
-              "RelativeDocumentMoniker": "MatrimonialCapstoneApplication\\Repositories\\LikeRepository.cs",
-              "ToolTip": "C:\\Users\\VC\\Documents\\Capstone\\MatrimonialCapstoneSolution\\MatrimonialCapstoneApplication\\Repositories\\LikeRepository.cs",
-              "RelativeToolTip": "MatrimonialCapstoneApplication\\Repositories\\LikeRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAA2AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-24T14:06:26.702Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "MemberRepositoryTest.cs",
-              "DocumentMoniker": "C:\\Users\\VC\\Documents\\Capstone\\MatrimonialCapstoneSolution\\MatrimonialCapstoneTest\\RepositoryTest\\MemberRepositoryTest.cs",
-              "RelativeDocumentMoniker": "MatrimonialCapstoneTest\\RepositoryTest\\MemberRepositoryTest.cs",
-              "ToolTip": "C:\\Users\\VC\\Documents\\Capstone\\MatrimonialCapstoneSolution\\MatrimonialCapstoneTest\\RepositoryTest\\MemberRepositoryTest.cs",
-              "RelativeToolTip": "MatrimonialCapstoneTest\\RepositoryTest\\MemberRepositoryTest.cs",
-              "ViewState": "AQIAAA4AAAAAAAAAAAAQwBMAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-24T11:43:01.544Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "UserRepositoryTest.cs",
-              "DocumentMoniker": "C:\\Users\\VC\\Documents\\Capstone\\MatrimonialCapstoneSolution\\MatrimonialCapstoneTest\\RepositoryTest\\UserRepositoryTest.cs",
-              "RelativeDocumentMoniker": "MatrimonialCapstoneTest\\RepositoryTest\\UserRepositoryTest.cs",
-              "ToolTip": "C:\\Users\\VC\\Documents\\Capstone\\MatrimonialCapstoneSolution\\MatrimonialCapstoneTest\\RepositoryTest\\UserRepositoryTest.cs",
-              "RelativeToolTip": "MatrimonialCapstoneTest\\RepositoryTest\\UserRepositoryTest.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-24T11:43:00.337Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "MemberServices.cs",
-              "DocumentMoniker": "C:\\Users\\VC\\Documents\\Capstone\\MatrimonialCapstoneSolution\\MatrimonialCapstoneApplication\\Services\\MemberServices.cs",
-              "RelativeDocumentMoniker": "MatrimonialCapstoneApplication\\Services\\MemberServices.cs",
-              "ToolTip": "C:\\Users\\VC\\Documents\\Capstone\\MatrimonialCapstoneSolution\\MatrimonialCapstoneApplication\\Services\\MemberServices.cs",
-              "RelativeToolTip": "MatrimonialCapstoneApplication\\Services\\MemberServices.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAABAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-24T11:42:05.6Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "BaseServices.cs",
-              "DocumentMoniker": "C:\\Users\\VC\\Documents\\Capstone\\MatrimonialCapstoneSolution\\MatrimonialCapstoneApplication\\Services\\BaseServices.cs",
-              "RelativeDocumentMoniker": "MatrimonialCapstoneApplication\\Services\\BaseServices.cs",
-              "ToolTip": "C:\\Users\\VC\\Documents\\Capstone\\MatrimonialCapstoneSolution\\MatrimonialCapstoneApplication\\Services\\BaseServices.cs",
-              "RelativeToolTip": "MatrimonialCapstoneApplication\\Services\\BaseServices.cs",
-              "ViewState": "AQIAAEgAAAAAAAAAAAAUwFgAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-24T11:41:44.329Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "User.cs",
-              "DocumentMoniker": "C:\\Users\\VC\\Documents\\Capstone\\MatrimonialCapstoneSolution\\MatrimonialCapstoneApplication\\Models\\User.cs",
-              "RelativeDocumentMoniker": "MatrimonialCapstoneApplication\\Models\\User.cs",
-              "ToolTip": "C:\\Users\\VC\\Documents\\Capstone\\MatrimonialCapstoneSolution\\MatrimonialCapstoneApplication\\Models\\User.cs",
-              "RelativeToolTip": "MatrimonialCapstoneApplication\\Models\\User.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAsAAAApAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-24T11:37:50.476Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "UserServiceTest.cs",
-              "DocumentMoniker": "C:\\Users\\VC\\Documents\\Capstone\\MatrimonialCapstoneSolution\\MatrimonialCapstoneTest\\ServiceTest\\UserServiceTest.cs",
-              "RelativeDocumentMoniker": "MatrimonialCapstoneTest\\ServiceTest\\UserServiceTest.cs",
-              "ToolTip": "C:\\Users\\VC\\Documents\\Capstone\\MatrimonialCapstoneSolution\\MatrimonialCapstoneTest\\ServiceTest\\UserServiceTest.cs",
-              "RelativeToolTip": "MatrimonialCapstoneTest\\ServiceTest\\UserServiceTest.cs",
-              "ViewState": "AQIAAJIAAAAAAAAAAAAiwJkAAAAjAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-24T11:36:10.57Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "MemberServiceTest.cs",
-              "DocumentMoniker": "C:\\Users\\VC\\Documents\\Capstone\\MatrimonialCapstoneSolution\\MatrimonialCapstoneTest\\ServiceTest\\MemberServiceTest.cs",
-              "RelativeDocumentMoniker": "MatrimonialCapstoneTest\\ServiceTest\\MemberServiceTest.cs",
-              "ToolTip": "C:\\Users\\VC\\Documents\\Capstone\\MatrimonialCapstoneSolution\\MatrimonialCapstoneTest\\ServiceTest\\MemberServiceTest.cs",
-              "RelativeToolTip": "MatrimonialCapstoneTest\\ServiceTest\\MemberServiceTest.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAACQAAAAOAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-24T11:34:42.388Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "UserController.cs",
-              "DocumentMoniker": "C:\\Users\\VC\\Documents\\Capstone\\MatrimonialCapstoneSolution\\MatrimonialCapstoneApplication\\Controllers\\UserController.cs",
-              "RelativeDocumentMoniker": "MatrimonialCapstoneApplication\\Controllers\\UserController.cs",
-              "ToolTip": "C:\\Users\\VC\\Documents\\Capstone\\MatrimonialCapstoneSolution\\MatrimonialCapstoneApplication\\Controllers\\UserController.cs",
-              "RelativeToolTip": "MatrimonialCapstoneApplication\\Controllers\\UserController.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAABUAAAASAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-24T11:32:31.496Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "PictureController.cs",
-              "DocumentMoniker": "C:\\Users\\VC\\Documents\\Capstone\\MatrimonialCapstoneSolution\\MatrimonialCapstoneApplication\\Controllers\\PictureController.cs",
-              "RelativeDocumentMoniker": "MatrimonialCapstoneApplication\\Controllers\\PictureController.cs",
-              "ToolTip": "C:\\Users\\VC\\Documents\\Capstone\\MatrimonialCapstoneSolution\\MatrimonialCapstoneApplication\\Controllers\\PictureController.cs",
-              "RelativeToolTip": "MatrimonialCapstoneApplication\\Controllers\\PictureController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-24T11:32:30.401Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "MemberController.cs",
-              "DocumentMoniker": "C:\\Users\\VC\\Documents\\Capstone\\MatrimonialCapstoneSolution\\MatrimonialCapstoneApplication\\Controllers\\MemberController.cs",
-              "RelativeDocumentMoniker": "MatrimonialCapstoneApplication\\Controllers\\MemberController.cs",
-              "ToolTip": "C:\\Users\\VC\\Documents\\Capstone\\MatrimonialCapstoneSolution\\MatrimonialCapstoneApplication\\Controllers\\MemberController.cs",
-              "RelativeToolTip": "MatrimonialCapstoneApplication\\Controllers\\MemberController.cs",
-              "ViewState": "AQIAABgAAAAAAAAAAAAowCUAAAAaAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-24T11:32:29.128Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "Like.cs",
-              "DocumentMoniker": "C:\\Users\\VC\\Documents\\Capstone\\MatrimonialCapstoneSolution\\MatrimonialCapstoneApplication\\Models\\Like.cs",
-              "RelativeDocumentMoniker": "MatrimonialCapstoneApplication\\Models\\Like.cs",
-              "ToolTip": "C:\\Users\\VC\\Documents\\Capstone\\MatrimonialCapstoneSolution\\MatrimonialCapstoneApplication\\Models\\Like.cs",
-              "RelativeToolTip": "MatrimonialCapstoneApplication\\Models\\Like.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAvAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-24T11:12:29.025Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "Hobby.cs",
-              "DocumentMoniker": "C:\\Users\\VC\\Documents\\Capstone\\MatrimonialCapstoneSolution\\MatrimonialCapstoneApplication\\Models\\Hobby.cs",
-              "RelativeDocumentMoniker": "MatrimonialCapstoneApplication\\Models\\Hobby.cs",
-              "ToolTip": "C:\\Users\\VC\\Documents\\Capstone\\MatrimonialCapstoneSolution\\MatrimonialCapstoneApplication\\Models\\Hobby.cs",
-              "RelativeToolTip": "MatrimonialCapstoneApplication\\Models\\Hobby.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAABAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-24T11:09:33.857Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "MatrimonialContext.cs",
-              "DocumentMoniker": "C:\\Users\\VC\\Documents\\Capstone\\MatrimonialCapstoneSolution\\MatrimonialCapstoneApplication\\Context\\MatrimonialContext.cs",
-              "RelativeDocumentMoniker": "MatrimonialCapstoneApplication\\Context\\MatrimonialContext.cs",
-              "ToolTip": "C:\\Users\\VC\\Documents\\Capstone\\MatrimonialCapstoneSolution\\MatrimonialCapstoneApplication\\Context\\MatrimonialContext.cs",
-              "RelativeToolTip": "MatrimonialCapstoneApplication\\Context\\MatrimonialContext.cs",
-              "ViewState": "AQIAAHIAAAAAAAAAAAAmwOkAAAApAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-24T11:04:11.864Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "Member.cs",
-              "DocumentMoniker": "C:\\Users\\VC\\Documents\\Capstone\\MatrimonialCapstoneSolution\\MatrimonialCapstoneApplication\\Models\\Member.cs",
-              "RelativeDocumentMoniker": "MatrimonialCapstoneApplication\\Models\\Member.cs",
-              "ToolTip": "C:\\Users\\VC\\Documents\\Capstone\\MatrimonialCapstoneSolution\\MatrimonialCapstoneApplication\\Models\\Member.cs",
-              "RelativeToolTip": "MatrimonialCapstoneApplication\\Models\\Member.cs",
-              "ViewState": "AQIAAB0AAAAAAAAAAAAIwCcAAAAoAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-24T10:50:04.049Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "Picture.cs",
-              "DocumentMoniker": "C:\\Users\\VC\\Documents\\Capstone\\MatrimonialCapstoneSolution\\MatrimonialCapstoneApplication\\Models\\Picture.cs",
-              "RelativeDocumentMoniker": "MatrimonialCapstoneApplication\\Models\\Picture.cs",
-              "ToolTip": "C:\\Users\\VC\\Documents\\Capstone\\MatrimonialCapstoneSolution\\MatrimonialCapstoneApplication\\Models\\Picture.cs",
-              "RelativeToolTip": "MatrimonialCapstoneApplication\\Models\\Picture.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAApAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-24T10:46:49.497Z"
             }
           ]
         }

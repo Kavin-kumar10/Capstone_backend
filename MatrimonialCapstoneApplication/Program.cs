@@ -69,14 +69,43 @@ namespace MatrimonialCapstoneApplication
             #endregion
 
             builder.Services.AddDbContext<MatrimonialContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("defaultString")));
-            builder.Services.AddScoped<IUserServices, UserServices>();
-            builder.Services.AddScoped<IServices<int,Member>, MemberServices>();
-            builder.Services.AddScoped<IServices<int, Picture>, PictureServices>();
-            builder.Services.AddScoped<IRepository<int, User>, UserRepository>();
-            builder.Services.AddScoped<IRepository<int, Picture>, PictureRepository>();
-            builder.Services.AddScoped<IRepository<int, Member>, MemberRepository>();
             builder.Services.AddScoped<ITokenService, TokenService>();
+
+            builder.Services.AddScoped<IRepository<int, User>, UserRepository>();
             builder.Services.AddScoped<IUserRepository, UserRepository>();
+            builder.Services.AddScoped<IUserServices, UserServices>();
+
+            builder.Services.AddScoped<IRepository<int, Picture>, PictureRepository>();
+            builder.Services.AddScoped<IServices<int, Picture>, PictureServices>();
+            builder.Services.AddScoped<IPictureServices, PictureServices>();
+
+            builder.Services.AddScoped<IRepository<int, Member>, MemberRepository>();
+            builder.Services.AddScoped<IServices<int,Member>, MemberServices>();
+
+
+            builder.Services.AddScoped<IRepository<int, Match>, MatchRepository>();
+            builder.Services.AddScoped<IServices<int, Match>, MatchServices>();
+
+            builder.Services.AddScoped<IRepository<int, Like>, LikeRepository>();
+            builder.Services.AddScoped<IServices<int, Like>, LikeServices>();
+
+            builder.Services.AddScoped<IRepository<int, Locate>, LocateRepository>();
+            builder.Services.AddScoped<IServices<int, Locate>, LocateService>();
+
+
+            builder.Services.AddScoped<IRepository<int, Verification>, VerificationRepository>();
+            builder.Services.AddScoped<IServices<int, Verification>, VerificationServices>();
+
+            builder.Services.AddScoped<IRepository<int, Report>, ReportRepository>();
+            builder.Services.AddScoped<IServices<int, Report>, ReportServices>();
+
+            builder.Services.AddScoped<IRepository<int, PersonalDetails>, PersonalDetailsRepository>();
+            builder.Services.AddScoped<IServices<int, PersonalDetails>, PersonalDetailsServices>();
+            builder.Services.AddScoped<IPersonalDetailServices,PersonalDetailsServices>();
+
+            builder.Services.AddScoped<IRepository<int, DailyLog>,DailyLogsRepository>();
+
+
 
             builder.Services.AddSwaggerGen();
 

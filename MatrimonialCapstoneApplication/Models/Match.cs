@@ -20,7 +20,7 @@ namespace MatrimonialCapstoneApplication.Models
         public string? Message { get; set; }  // Optional message associated with the match
 
         [Required]
-        public DateTime MatchDate { get; set; }  // Date when the match was created
+        public DateTime MatchDate { get; set; } = new DateTime();  // Date when the match was created
 
         public Member FromProfile { get; set; }  // Navigation property
 

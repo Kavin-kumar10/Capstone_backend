@@ -33,11 +33,11 @@ namespace MatrimonialCapstoneApplication.Migrations
                     b.Property<string>("About")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int?>("Age")
+                        .HasColumnType("int");
+
                     b.Property<bool?>("AllowLocation")
                         .HasColumnType("bit");
-
-                    b.Property<string>("AnnualIncome")
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Caste")
                         .HasColumnType("nvarchar(max)");
@@ -45,20 +45,8 @@ namespace MatrimonialCapstoneApplication.Migrations
                     b.Property<string>("Disabilities")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Education")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Email")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("FamilyStatus")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("FamilyType")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("FamilyValue")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Gender")
@@ -70,16 +58,7 @@ namespace MatrimonialCapstoneApplication.Migrations
                     b.Property<bool?>("IsVerified")
                         .HasColumnType("bit");
 
-                    b.Property<string>("Location")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("MaritalStatus")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int?>("MemberId1")
-                        .HasColumnType("int");
-
-                    b.Property<string>("MemberName")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Membership")
@@ -93,9 +72,6 @@ namespace MatrimonialCapstoneApplication.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PersonName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("ProfessionName")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ProfilePic")
@@ -112,8 +88,6 @@ namespace MatrimonialCapstoneApplication.Migrations
 
                     b.HasKey("MemberId");
 
-                    b.HasIndex("MemberId1");
-
                     b.ToTable("Members");
 
                     b.HasData(
@@ -122,25 +96,17 @@ namespace MatrimonialCapstoneApplication.Migrations
                             MemberId = 1,
                             About = "A software developer with a passion for coding.",
                             AllowLocation = true,
-                            AnnualIncome = "60000",
                             Caste = "General",
                             Disabilities = "None",
-                            Education = "Bachelor's in Computer Science",
                             Email = "john.doe@example.com",
-                            FamilyStatus = "Upper",
-                            FamilyType = "Nuclear",
-                            FamilyValue = "Traditional",
                             Gender = "Male",
                             Height = 180,
                             IsVerified = true,
-                            Location = "New York",
                             MaritalStatus = "Single",
-                            MemberName = "John",
                             Membership = 1,
                             MotherTongue = "English",
                             Name = "John Doe",
                             PersonName = "John Doe",
-                            ProfessionName = "Software Engineer",
                             ProfilePic = "https://example.com/profilepic.jpg",
                             Relation = "Single",
                             Religion = "Christian",
@@ -151,25 +117,17 @@ namespace MatrimonialCapstoneApplication.Migrations
                             MemberId = 2,
                             About = "A software developer with a passion for coding.",
                             AllowLocation = true,
-                            AnnualIncome = "60000",
                             Caste = "General",
                             Disabilities = "None",
-                            Education = "Bachelor's in Computer Science",
                             Email = "kavin.doe@example.com",
-                            FamilyStatus = "Upper",
-                            FamilyType = "Nuclear",
-                            FamilyValue = "Traditional",
                             Gender = "Male",
                             Height = 180,
                             IsVerified = true,
-                            Location = "New York",
                             MaritalStatus = "Single",
-                            MemberName = "John",
                             Membership = 1,
                             MotherTongue = "English",
                             Name = "Kavin",
                             PersonName = "John Doe",
-                            ProfessionName = "Software Engineer",
                             ProfilePic = "https://example.com/profilepic.jpg",
                             Relation = "Single",
                             Religion = "Christian",
@@ -189,6 +147,10 @@ namespace MatrimonialCapstoneApplication.Migrations
                     b.Property<byte[]>("HashedPassword")
                         .IsRequired()
                         .HasColumnType("varbinary(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<byte[]>("Password")
                         .IsRequired()
@@ -215,27 +177,27 @@ namespace MatrimonialCapstoneApplication.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("MemberId")
+                    b.Property<int>("PersonalDetailsId")
                         .HasColumnType("int");
 
                     b.HasKey("HobbyId");
 
-                    b.HasIndex("MemberId");
+                    b.HasIndex("PersonalDetailsId");
 
-                    b.ToTable("Hobby");
+                    b.ToTable("hobbies");
 
                     b.HasData(
                         new
                         {
                             HobbyId = 1,
                             HobbyName = "Coding",
-                            MemberId = 1
+                            PersonalDetailsId = 1
                         },
                         new
                         {
                             HobbyId = 2,
                             HobbyName = "Reading",
-                            MemberId = 1
+                            PersonalDetailsId = 1
                         });
                 });
 
@@ -256,13 +218,52 @@ namespace MatrimonialCapstoneApplication.Migrations
                     b.Property<int>("LikedId")
                         .HasColumnType("int");
 
+                    b.Property<int?>("MemberId")
+                        .HasColumnType("int");
+
                     b.HasKey("LikeId");
 
                     b.HasIndex("LikedById");
 
                     b.HasIndex("LikedId");
 
+                    b.HasIndex("MemberId");
+
                     b.ToTable("Likes");
+                });
+
+            modelBuilder.Entity("MatrimonialCapstoneApplication.Models.Locate", b =>
+                {
+                    b.Property<int>("LocateId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("LocateId"), 1L, 1);
+
+                    b.Property<double>("Lat")
+                        .HasColumnType("float");
+
+                    b.Property<double>("Long")
+                        .HasColumnType("float");
+
+                    b.Property<int>("PersonalDetailsId")
+                        .HasColumnType("int");
+
+                    b.HasKey("LocateId");
+
+                    b.HasIndex("PersonalDetailsId")
+                        .IsUnique();
+
+                    b.ToTable("Locations");
+
+                    b.HasData(
+                        new
+                        {
+                            LocateId = 1,
+                            Lat = 72.0,
+                            Long = 83.221999999999994,
+                            PersonalDetailsId = 1
+                        });
                 });
 
             modelBuilder.Entity("MatrimonialCapstoneApplication.Models.Match", b =>
@@ -308,10 +309,57 @@ namespace MatrimonialCapstoneApplication.Migrations
                         {
                             MatchId = 1,
                             FromProfileId = 1,
-                            MatchDate = new DateTime(2024, 7, 24, 10, 55, 46, 119, DateTimeKind.Utc).AddTicks(9098),
+                            MatchDate = new DateTime(2024, 7, 26, 11, 0, 31, 776, DateTimeKind.Utc).AddTicks(5859),
                             Message = "Hi, I would like to connect.",
                             Status = "Pending",
                             ToProfileId = 2
+                        });
+                });
+
+            modelBuilder.Entity("MatrimonialCapstoneApplication.Models.PersonalDetails", b =>
+                {
+                    b.Property<int>("PersonalDetailsId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("PersonalDetailsId"), 1L, 1);
+
+                    b.Property<string>("AnnualIncome")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Education")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FamilyStatus")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FamilyType")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FamilyValue")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("MemberId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ProfessionName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("PersonalDetailsId");
+
+                    b.ToTable("PersonalDetails");
+
+                    b.HasData(
+                        new
+                        {
+                            PersonalDetailsId = 1,
+                            AnnualIncome = "60000",
+                            Education = "Bachelor's in Computer Science",
+                            FamilyStatus = "Upper",
+                            FamilyType = "Nuclear",
+                            FamilyValue = "Traditional",
+                            MemberId = 0,
+                            ProfessionName = "Software Engineer"
                         });
                 });
 
@@ -323,7 +371,7 @@ namespace MatrimonialCapstoneApplication.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("PictureId"), 1L, 1);
 
-                    b.Property<int>("MemberId")
+                    b.Property<int>("PersonalDetailsId")
                         .HasColumnType("int");
 
                     b.Property<string>("PictureUrl")
@@ -332,21 +380,21 @@ namespace MatrimonialCapstoneApplication.Migrations
 
                     b.HasKey("PictureId");
 
-                    b.HasIndex("MemberId");
+                    b.HasIndex("PersonalDetailsId");
 
-                    b.ToTable("Picture");
+                    b.ToTable("Pictures");
 
                     b.HasData(
                         new
                         {
                             PictureId = 1,
-                            MemberId = 1,
+                            PersonalDetailsId = 1,
                             PictureUrl = "https://example.com/picture1.jpg"
                         },
                         new
                         {
                             PictureId = 2,
-                            MemberId = 1,
+                            PersonalDetailsId = 1,
                             PictureUrl = "https://example.com/picture2.jpg"
                         });
                 });
@@ -424,13 +472,6 @@ namespace MatrimonialCapstoneApplication.Migrations
                     b.ToTable("Verifications");
                 });
 
-            modelBuilder.Entity("MatrimonialCapstoneApplication.Modals.Member", b =>
-                {
-                    b.HasOne("MatrimonialCapstoneApplication.Modals.Member", null)
-                        .WithMany("Likes")
-                        .HasForeignKey("MemberId1");
-                });
-
             modelBuilder.Entity("MatrimonialCapstoneApplication.Modals.User", b =>
                 {
                     b.HasOne("MatrimonialCapstoneApplication.Modals.Member", "Member")
@@ -444,13 +485,13 @@ namespace MatrimonialCapstoneApplication.Migrations
 
             modelBuilder.Entity("MatrimonialCapstoneApplication.Models.Hobby", b =>
                 {
-                    b.HasOne("MatrimonialCapstoneApplication.Modals.Member", "Member")
+                    b.HasOne("MatrimonialCapstoneApplication.Models.PersonalDetails", "PersonalDetails")
                         .WithMany("Hobby")
-                        .HasForeignKey("MemberId")
+                        .HasForeignKey("PersonalDetailsId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Member");
+                    b.Navigation("PersonalDetails");
                 });
 
             modelBuilder.Entity("MatrimonialCapstoneApplication.Models.Like", b =>
@@ -467,9 +508,24 @@ namespace MatrimonialCapstoneApplication.Migrations
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
+                    b.HasOne("MatrimonialCapstoneApplication.Modals.Member", null)
+                        .WithMany("Likes")
+                        .HasForeignKey("MemberId");
+
                     b.Navigation("Liked");
 
                     b.Navigation("LikedBy");
+                });
+
+            modelBuilder.Entity("MatrimonialCapstoneApplication.Models.Locate", b =>
+                {
+                    b.HasOne("MatrimonialCapstoneApplication.Models.PersonalDetails", "PersonalDetails")
+                        .WithOne("Location")
+                        .HasForeignKey("MatrimonialCapstoneApplication.Models.Locate", "PersonalDetailsId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("PersonalDetails");
                 });
 
             modelBuilder.Entity("MatrimonialCapstoneApplication.Models.Match", b =>
@@ -497,13 +553,13 @@ namespace MatrimonialCapstoneApplication.Migrations
 
             modelBuilder.Entity("MatrimonialCapstoneApplication.Models.Picture", b =>
                 {
-                    b.HasOne("MatrimonialCapstoneApplication.Modals.Member", "Member")
+                    b.HasOne("MatrimonialCapstoneApplication.Models.PersonalDetails", "PersonalDetails")
                         .WithMany("Pictures")
-                        .HasForeignKey("MemberId")
+                        .HasForeignKey("PersonalDetailsId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Member");
+                    b.Navigation("PersonalDetails");
                 });
 
             modelBuilder.Entity("MatrimonialCapstoneApplication.Models.Report", b =>
@@ -538,15 +594,20 @@ namespace MatrimonialCapstoneApplication.Migrations
 
             modelBuilder.Entity("MatrimonialCapstoneApplication.Modals.Member", b =>
                 {
-                    b.Navigation("Hobby");
-
                     b.Navigation("Likes");
 
                     b.Navigation("Matches");
 
-                    b.Navigation("Pictures");
-
                     b.Navigation("Reports");
+                });
+
+            modelBuilder.Entity("MatrimonialCapstoneApplication.Models.PersonalDetails", b =>
+                {
+                    b.Navigation("Hobby");
+
+                    b.Navigation("Location");
+
+                    b.Navigation("Pictures");
                 });
 #pragma warning restore 612, 618
         }
