@@ -7,8 +7,8 @@ namespace MatrimonialCapstoneApplication.Models
     {
         public int HobbyId { get; set; }
         public string HobbyName { get; set; }   
-        public int PersonalDetailsId { get; set; }
+        public int MemberId { get; set; }
         [JsonIgnore]
-        public PersonalDetails PersonalDetails { get; set; }
+        public Member Member { get; set; }
     }
 }

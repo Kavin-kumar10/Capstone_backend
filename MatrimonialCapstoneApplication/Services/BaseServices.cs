@@ -66,7 +66,7 @@ namespace MatrimonialCapstoneApplication.Services
         #endregion
 
         #region Get Entity by Id
-        public async Task<T> GetById(int Key)
+        public virtual async Task<T> GetById(int Key)
         {
             var result = await _repo.Get(Key);
             if (result == null)

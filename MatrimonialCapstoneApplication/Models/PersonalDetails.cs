@@ -17,7 +17,6 @@ namespace MatrimonialCapstoneApplication.Models
         public string? ProfessionName { get; set; }
         public Locate? Location { get; set; }
         public string? AnnualIncome { get; set; }
-        public List<Hobby>? Hobby { get; set; }
         public List<Picture>? Pictures { get; set; }
     }
 }

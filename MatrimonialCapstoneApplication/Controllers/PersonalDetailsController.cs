@@ -1,8 +1,10 @@
 ﻿using MatrimonialCapstoneApplication.Exceptions;
 using MatrimonialCapstoneApplication.Interfaces;
 using MatrimonialCapstoneApplication.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 
 namespace MatrimonialCapstoneApplication.Controllers
 {
@@ -56,14 +58,23 @@ namespace MatrimonialCapstoneApplication.Controllers
         /// <returns></returns>
 
         [HttpGet]
+        [Authorize]
         [Route("GetByMemberId")]
         [ProducesResponseType(typeof(PersonalDetails), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ErrorModel), StatusCodes.Status404NotFound)]
-        public async Task<ActionResult<PersonalDetails>> GetPersonalDetailsWithMemberId(int MemberId)
+        public async Task<ActionResult<PersonalDetails>> GetPersonalDetailsWithMemId(int MemberId)
         {
             try
             {
-                var result = await _personaldetailservices.GetPersonalDetailsWithMemberId(MemberId);
+                // Extract the email from the Name claim
+                var userEmail = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Name)?.Value;
+
+                // Extract the role from the Role claim
+                var userRole = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Role)?.Value;
+
+                _logger.LogCritical(userEmail);
+                _logger.LogCritical(userRole);
+                var result = await _personaldetailservices.GetPersonalDetailsWithMemberId(MemberId,userEmail,userRole);
                 _logger.LogInformation("Getting personal Details using Id");
                 return Ok(result);
             }

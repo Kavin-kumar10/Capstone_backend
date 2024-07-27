@@ -1,5 +1,7 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using MatrimonialCapstoneApplication.Modals;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace MatrimonialCapstoneApplication.Models
 {
@@ -7,9 +9,10 @@ namespace MatrimonialCapstoneApplication.Models
     {
         [Key]
         public int DailyLogId {  get; set; }
-        [ForeignKey("MemberId")]
-        public int MemberId { get; set; }
-        public DateOnly Date {  get; set; }
+        public DateTime Date {  get; set; }
         public int CreditsCount { get; set; }
+        public int MemberId { get; set; }
+        [JsonIgnore]
+        public Member? Member { get; set; }
     }
 }

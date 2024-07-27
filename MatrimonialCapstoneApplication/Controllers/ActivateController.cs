@@ -1,0 +1,81 @@
+﻿using MatrimonialCapstoneApplication.Exceptions;
+using MatrimonialCapstoneApplication.Interfaces;
+using MatrimonialCapstoneApplication.Models.DTOs.RequestDTOs;
+using MatrimonialCapstoneApplication.Models.DTOs.ReturnDTOs;
+using MatrimonialCapstoneApplication.Models;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using System.Diagnostics.CodeAnalysis;
+
+namespace MatrimonialCapstoneApplication.Controllers
+{
+    [Route("api/[controller]")]
+    [ApiController]
+    public class ActivateController : ControllerBase
+    {
+        IActivateServices _service;
+        private readonly ILogger<ActivateController> _logger;
+
+        public ActivateController(IActivateServices service, ILogger<ActivateController> logger)
+        {
+            _service = service;
+            _logger = logger;
+        }
+
+        [HttpPut]
+        [Route("Activate")]
+        [Authorize(Roles = "Admin")]
+        [ProducesResponseType(typeof(ActivateReturnDTO), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ErrorModel), StatusCodes.Status404NotFound)]
+        [ExcludeFromCodeCoverage]
+        public async Task<ActionResult<ActivateReturnDTO>> ActivateUser(ActivationReqDTO activationReqDTO)
+        {
+            try
+            {
+                var res = await _service.Activate(activationReqDTO.MemberId, activationReqDTO.Role, activationReqDTO.Plan);
+                _logger.LogInformation($"Activating the Member : {activationReqDTO.MemberId}");
+                return Ok(res);
+            }
+            catch (NotFoundException unfe)
+            {
+                _logger.LogError(unfe.Message);
+                return BadRequest(new ErrorModel(404, unfe.Message));
+            }
+            catch (Exception e)
+            {
+                _logger.LogError(e.Message);
+                return BadRequest(new ErrorModel(500, e.Message));
+            }
+        }
+
+
+
+        [HttpPut]
+        [Route("Deactivate")]
+        [Authorize(Roles = "Admin")]
+        [ProducesResponseType(typeof(ActivateReturnDTO), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ErrorModel), StatusCodes.Status404NotFound)]
+        [ExcludeFromCodeCoverage]
+
+        public async Task<ActionResult<ActivateReturnDTO>> DeactivateUser(int MemberId)
+        {
+            try
+            {
+                var res = await _service.Deactivate(MemberId);
+                _logger.LogInformation($"Deactivating the Member : {MemberId}");
+                return Ok(res);
+            }
+            catch (NotFoundException unfe)
+            {
+                _logger.LogError(unfe.Message);
+                return BadRequest(new ErrorModel(404, unfe.Message));
+            }
+            catch(Exception e)
+            {
+                _logger.LogError(e.Message);
+                return BadRequest(new ErrorModel(500, e.Message));
+            }
+        }
+    }
+}

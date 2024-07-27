@@ -26,50 +26,64 @@ namespace MatrimonialCapstoneApplication.Context
         {
 
             modelBuilder.Entity<Member>().HasData(
-              new Member
-              {
-                  MemberId = 1,
-                  Name = "John Doe",
-                  Email = "john.doe@example.com",
-                  Role = RoleEnum.User,
-                  Membership = Membershipenum.Premium,
-                  Gender = "Male",
-                  Relation = "Single",
-                  PersonName = "John Doe",
-                  About = "A software developer with a passion for coding.",
-                  Height = 180,
-                  MotherTongue = "English",
-                  Caste = "General",
-                  Religion = "Christian",
-                  MaritalStatus = "Single",
-                  Disabilities = "None",
-                  AllowLocation = true,
-                  IsVerified = true,
-                  ProfilePic = "https://example.com/profilepic.jpg",
-              },
-               new Member
-               {
-                   MemberId = 2,
-                   Name = "Kavin",
-                   Email = "kavin.doe@example.com",
-                   Role = RoleEnum.User,
-                   Membership = Membershipenum.Premium,
-                   Gender = "Male",
-                   Relation = "Single",
-                   PersonName = "John Doe",
-                   About = "A software developer with a passion for coding.",
-                   Height = 180,
-                   MotherTongue = "English",
-                   Caste = "General",
-                   Religion = "Christian",
-                   MaritalStatus = "Single",
-                   Disabilities = "None",
-                   AllowLocation = true,
-                   IsVerified = true,
-                   ProfilePic = "https://example.com/profilepic.jpg",
-                   // Add default values for relationships if applicable
-               }
+                new Member
+                {
+                    MemberId = 1,
+                    Name = "John Doe",
+                    Email = "johndoe.prof@gmail.com",
+                    Role = RoleEnum.User,
+                    Membership = Membershipenum.Free,
+                    Gender = "Male",
+                    Age = 30,
+                    Relation = "Brother",
+                    PersonName = "Kavin Kumar M",
+                    About = "I am a software developer who loves coding and hiking.",
+                    Height = 180,
+                    MotherTongue = "English",
+                    Caste = "General",
+                    Religion = "Christian",
+                    MaritalStatus = "Single",
+                    Native = "Theni",
+                    Disabilities = "None",
+                    AllowLocation = true,
+                    IsVerified = true,
+                    ProfilePic = "https://kavincapstone.blob.core.windows.net/kavinimages/a4151274-cd05-4500-aea5-e1d07d753252.jpg",
+                },
+                new Member
+                {
+                    MemberId = 2,
+                    Name = "Jane Smith",
+                    Email = "janesmith@example.com",
+                    Role = RoleEnum.User,
+                    Membership = Membershipenum.Premium,
+                    Gender = "Female",
+                    Age = 28,
+                    Relation = "Sister",
+                    PersonName = "Marry jasmine",
+                    About = "I enjoy reading, traveling, and learning new languages.",
+                    Height = 165,
+                    MotherTongue = "Spanish",
+                    Caste = "OBC",
+                    Religion = "Hindu",
+                    MaritalStatus = "Single",
+                    Native = "Chennai",
+                    Disabilities = "None",
+                    AllowLocation = true,
+                    IsVerified = true,
+                    ProfilePic = "https://example.com/janesmith.jpg",
+                }
+
         );
+
+            modelBuilder.Entity<DailyLog>().HasData(
+                new DailyLog
+                {
+                    Date = DateTime.Now,
+                    MemberId = 2,
+                    CreditsCount = 5,
+                    DailyLogId = 1,
+                }       
+            );
 
         modelBuilder.Entity<PersonalDetails>().HasData(
             new PersonalDetails
@@ -116,13 +130,13 @@ namespace MatrimonialCapstoneApplication.Context
             {
                 HobbyId = 1,
                 HobbyName = "Coding",
-                PersonalDetailsId = 1
+                MemberId = 1
             },
             new Hobby
             {
                 HobbyId = 2,
                 HobbyName = "Reading",
-                PersonalDetailsId = 1
+                MemberId = 2
             }
         );
 
@@ -165,9 +179,9 @@ namespace MatrimonialCapstoneApplication.Context
         //Pictures
 
         modelBuilder.Entity<PersonalDetails>()
-        .HasMany(m => m.Pictures)
-        .WithOne(p => p.PersonalDetails)
-        .HasForeignKey(p => p.PersonalDetailsId);
+            .HasMany(m => m.Pictures)
+            .WithOne(p => p.PersonalDetails)
+            .HasForeignKey(p => p.PersonalDetailsId);
 
         modelBuilder.Entity<PersonalDetails>()
             .Navigation(m => m.Pictures)
@@ -175,78 +189,110 @@ namespace MatrimonialCapstoneApplication.Context
 
         //Hobby
 
-        modelBuilder.Entity<PersonalDetails>()
+        modelBuilder.Entity<Member>()
             .HasMany(m => m.Hobby)
-            .WithOne(h => h.PersonalDetails)
-            .HasForeignKey(h => h.PersonalDetailsId);
+            .WithOne(h => h.Member)
+            .HasForeignKey(h => h.HobbyId);
 
-        modelBuilder.Entity<PersonalDetails>()
+        modelBuilder.Entity<Member>()
             .Navigation(m => m.Hobby)
             .AutoInclude();
 
-        //Likes
-
-        //modelBuilder.Entity<Member>()
-        //    .HasMany(m => m.Likes)
-        //    .WithOne(l => l.LikedBy)
-        //    .HasForeignKey(l=>l.LikedById);
 
 
-        //modelBuilder.Entity<Member>()
-        //    .HasMany(m => m.Likes)
-        //    .WithOne(l => l.Liked)
-        //    .HasForeignKey(l => l.LikedId);
+            //DailyLog
 
-        //modelBuilder.Entity<Member>()
-        //    .Navigation(m => m.Likes)
-        //    .AutoInclude();
+            modelBuilder.Entity<Member>()
+                .HasOne(m => m.DailyLog)
+                .WithOne(d => d.Member)
+                .HasForeignKey<DailyLog>(d => d.MemberId)
+                .OnDelete(DeleteBehavior.Cascade);
+            modelBuilder.Entity<Member>()
+                .Navigation(m=>m.DailyLog)
+                .AutoInclude();
 
-        //Match
+            //Like
 
-        //modelBuilder.Entity<Member>()
-        //    .HasMany(m => m.Matches)
-        //    .WithOne(m=>m.FromProfile)
-        //    .HasForeignKey(m=>m.FromProfileId);
+            modelBuilder.Entity<Like>()
+                .HasOne(l => l.LikedBy)
+                .WithMany(m => m.LikesGiven)
+                .HasForeignKey(l => l.LikedById)
+                .OnDelete(DeleteBehavior.NoAction);
+
+            modelBuilder.Entity<Like>()
+                .HasOne(l => l.Liked)
+                .WithMany(m => m.LikesReceived)
+                .HasForeignKey(l => l.LikedId)
+                .OnDelete(DeleteBehavior.NoAction);
+
+            // Optionally, you can use AutoInclude
+            modelBuilder.Entity<Member>()
+                .Navigation(m => m.LikesGiven)
+                .AutoInclude();
+
+            modelBuilder.Entity<Member>()
+                .Navigation(m => m.LikesReceived)
+                .AutoInclude();
+            //modelBuilder.Entity<Member>()
+            //    .HasMany(m => m.Likes)
+            //    .WithOne(l => l.LikedBy)
+            //    .HasForeignKey(l=>l.LikedById);
 
 
-        //modelBuilder.Entity<Member>()
-        //    .HasMany(m => m.Matches)
-        //    .WithOne(m => m.ToProfile)
-        //    .HasForeignKey(m => m.ToProfileId);
+            //modelBuilder.Entity<Member>()
+            //    .HasMany(m => m.Likes)
+            //    .WithOne(l => l.Liked)
+            //    .HasForeignKey(l => l.LikedId);
+
+            //modelBuilder.Entity<Member>()
+            //    .Navigation(m => m.Likes)
+            //    .AutoInclude();
+
+            //Match
+
+            //modelBuilder.Entity<Member>()
+            //    .HasMany(m => m.Matches)
+            //    .WithOne(m=>m.FromProfile)
+            //    .HasForeignKey(m=>m.FromProfileId);
 
 
-        //modelBuilder.Entity<Member>()
-        //    .Navigation(m => m.Matches)
-        //    .AutoInclude();
+            //modelBuilder.Entity<Member>()
+            //    .HasMany(m => m.Matches)
+            //    .WithOne(m => m.ToProfile)
+            //    .HasForeignKey(m => m.ToProfileId);
 
 
+            //modelBuilder.Entity<Member>()
+            //    .Navigation(m => m.Matches)
+            //    .AutoInclude();
 
-        modelBuilder.Entity<Match>()
-            .HasOne(m => m.FromProfile)
-            .WithMany()
-            .HasForeignKey(m => m.FromProfileId)
-            .OnDelete(DeleteBehavior.Restrict);
+            modelBuilder.Entity<Match>()
+                .HasOne(m => m.FromProfile)
+                .WithMany()
+                .HasForeignKey(m => m.FromProfileId)
+                .OnDelete(DeleteBehavior.Restrict);
 
-        modelBuilder.Entity<Match>()
-            .HasOne(m => m.ToProfile)
-            .WithMany()
-            .HasForeignKey(m => m.ToProfileId)
-            .OnDelete(DeleteBehavior.Restrict);
+            modelBuilder.Entity<Match>()
+                .HasOne(m => m.ToProfile)
+                .WithMany()
+                .HasForeignKey(m => m.ToProfileId)
+                .OnDelete(DeleteBehavior.Restrict);
 
         // Configuring relationships for Like
-        modelBuilder.Entity<Like>()
-            .HasOne(l => l.LikedBy)
-            .WithMany()
-            .HasForeignKey(l => l.LikedById)
-            .OnDelete(DeleteBehavior.Restrict);
+        //modelBuilder.Entity<Like>()
+        //    .HasOne(l => l.LikedBy)
+        //    .WithMany()
+        //    .HasForeignKey(l => l.LikedById)
+        //    .OnDelete(DeleteBehavior.Restrict);
 
-        modelBuilder.Entity<Like>()
-            .HasOne(l => l.Liked)
-            .WithMany()
-            .HasForeignKey(l => l.LikedId)
-            .OnDelete(DeleteBehavior.Restrict);
+        //modelBuilder.Entity<Like>()
+        //    .HasOne(l => l.Liked)
+        //    .WithMany()
+        //    .HasForeignKey(l => l.LikedId)
+        //    .OnDelete(DeleteBehavior.Restrict);
 
         // Configuring relationships for Report
+
         modelBuilder.Entity<Report>()
             .HasOne(r => r.ReportedBy)
             .WithMany()
@@ -265,23 +311,23 @@ namespace MatrimonialCapstoneApplication.Context
             .HasForeignKey(r => r.AdminHandledId)
             .OnDelete(DeleteBehavior.SetNull);
 
-        // Configuring relationships for Picture
-        //modelBuilder.Entity<Picture>()
-        //    .HasOne(p => p.Member)
-        //    .WithMany(m => m.Pictures)
-        //    .HasForeignKey(p => p.MemberId)
-        //    .OnDelete(DeleteBehavior.Cascade);
+            // Configuring relationships for Picture
+            //modelBuilder.Entity<Picture>()
+            //    .HasOne(p => p.Member)
+            //    .WithMany(m => m.Pictures)
+            //    .HasForeignKey(p => p.MemberId)
+            //    .OnDelete(DeleteBehavior.Cascade);
 
-        //modelBuilder.Entity<Picture>()
-        //    .Navigation(p => p.Member)
-        //    .AutoInclude();
-        //modelBuilder.Entity<Hobby>()
-        //    .HasOne(p => p.Member)
-        //    .WithMany(m => m.Hobby)
-        //    .HasForeignKey(p => p.MemberId)
-        //    .OnDelete(DeleteBehavior.Cascade);
+            //modelBuilder.Entity<Picture>()
+            //    .Navigation(p => p.Member)
+            //    .AutoInclude();
+            //modelBuilder.Entity<Hobby>()
+            //    .HasOne(p => p.Member)
+            //    .WithMany(m => m.Hobby)
+            //    .HasForeignKey(p => p.MemberId)
+            //    .OnDelete(DeleteBehavior.Cascade);
 
-        //base.OnModelCreating(modelBuilder);
+            base.OnModelCreating(modelBuilder);
         }
     }
 }

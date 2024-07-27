@@ -70,6 +70,7 @@ namespace MatrimonialCapstoneApplication
 
             builder.Services.AddDbContext<MatrimonialContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("defaultString")));
             builder.Services.AddScoped<ITokenService, TokenService>();
+            builder.Services.AddScoped<IActivateServices, ActivateServices>();
 
             builder.Services.AddScoped<IRepository<int, User>, UserRepository>();
             builder.Services.AddScoped<IUserRepository, UserRepository>();
@@ -80,6 +81,7 @@ namespace MatrimonialCapstoneApplication
             builder.Services.AddScoped<IPictureServices, PictureServices>();
 
             builder.Services.AddScoped<IRepository<int, Member>, MemberRepository>();
+            builder.Services.AddScoped<IMemberRepository, MemberRepository>();
             builder.Services.AddScoped<IServices<int,Member>, MemberServices>();
 
 
@@ -92,7 +94,6 @@ namespace MatrimonialCapstoneApplication
             builder.Services.AddScoped<IRepository<int, Locate>, LocateRepository>();
             builder.Services.AddScoped<IServices<int, Locate>, LocateService>();
 
-
             builder.Services.AddScoped<IRepository<int, Verification>, VerificationRepository>();
             builder.Services.AddScoped<IServices<int, Verification>, VerificationServices>();
 
@@ -104,8 +105,6 @@ namespace MatrimonialCapstoneApplication
             builder.Services.AddScoped<IPersonalDetailServices,PersonalDetailsServices>();
 
             builder.Services.AddScoped<IRepository<int, DailyLog>,DailyLogsRepository>();
-
-
 
             builder.Services.AddSwaggerGen();
 
@@ -128,8 +127,8 @@ namespace MatrimonialCapstoneApplication
 
             app.UseHttpsRedirection();
 
+            app.UseAuthentication();
             app.UseAuthorization();
-
 
             app.MapControllers();
 

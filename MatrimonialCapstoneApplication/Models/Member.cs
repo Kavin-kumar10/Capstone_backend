@@ -1,6 +1,7 @@
 ﻿using MatrimonialCapstoneApplication.Models;
 using MatrimonialCapstoneApplication.Models.Enums;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text.RegularExpressions;
 
 namespace MatrimonialCapstoneApplication.Modals
@@ -18,6 +19,7 @@ namespace MatrimonialCapstoneApplication.Modals
         public string? Relation { get; set; }
         public string? PersonName { get; set; }
         public string? About { get; set; }
+        public string? Native { get; set; }
         public int? Height { get; set; }
         public string? MotherTongue { get; set; }
         public string? Caste { get; set; }
@@ -27,9 +29,13 @@ namespace MatrimonialCapstoneApplication.Modals
         public bool? AllowLocation { get; set; }
         public bool? IsVerified { get; set; }
         public string? ProfilePic { get; set; }
-        public List<Models.Match>? Matches { get; set; }
-        public List<Like>? Likes { get; set; }
-        public List<Report>? Reports { get; set; }
 
+        //Navigation
+        public DailyLog? DailyLog { get; set; }
+        public List<Hobby>? Hobby { get; set; }
+        public List<Models.Match>? Matches { get; set; }
+        public List<Like>? LikesGiven { get; set; }
+        public List<Like>? LikesReceived { get; set; }
+        public List<Report>? Reports { get; set; }
     }
 }
