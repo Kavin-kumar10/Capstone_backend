@@ -1,5 +1,6 @@
 ﻿using MatrimonialCapstoneApplication.Modals;
 using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 
 namespace MatrimonialCapstoneApplication.Models
 {
@@ -12,8 +13,10 @@ namespace MatrimonialCapstoneApplication.Models
         public DateTime CreatedAt { get; set; }
 
         // Navigation properties
-        public Member LikedBy { get; set; }
-        public Member Liked { get; set; }
+        [JsonIgnore]
+        public Member? LikedBy { get; set; }
+        [JsonIgnore]
+        public Member? Liked { get; set; }
     }
 
 }

@@ -233,6 +233,9 @@ namespace MatrimonialCapstoneApplication.Context
             modelBuilder.Entity<Member>()
                 .Navigation(m => m.LikesReceived)
                 .AutoInclude();
+
+
+
             //modelBuilder.Entity<Member>()
             //    .HasMany(m => m.Likes)
             //    .WithOne(l => l.LikedBy)
