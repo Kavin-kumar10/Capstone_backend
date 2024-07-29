@@ -21,6 +21,7 @@ namespace MatrimonialCapstoneApplication.Services
         {
             string token;
             var claims = new List<Claim>() {
+                new Claim(ClaimTypes.NameIdentifier, member.MemberId.ToString()),
                 new Claim(ClaimTypes.Name,member.Email.ToString()),
                 new Claim(ClaimTypes.Role, member.Role.ToString())
             };

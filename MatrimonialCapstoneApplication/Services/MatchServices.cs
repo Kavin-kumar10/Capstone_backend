@@ -3,10 +3,18 @@ using MatrimonialCapstoneApplication.Models;
 
 namespace MatrimonialCapstoneApplication.Services
 {
-    public class MatchServices : BaseServices<Match>
+    public class MatchServices : BaseServices<Match>, IMatchesServices
     {
-        public MatchServices(IRepository<int, Match> repo) : base(repo)
+        IMatchesRepository _matchesRepository;
+        public MatchServices(IRepository<int, Match> repo,IMatchesRepository matchesRepository) : base(repo)
         {
+            _matchesRepository = matchesRepository;
+        }
+
+        public async Task<IEnumerable<Match>> GetMatchesWithMemberId(int MemberId)
+        {
+            var result = await _matchesRepository.GetMatchesWithMemberId(MemberId);   
+            return result;
         }
     }
 }

@@ -11,11 +11,13 @@ namespace MatrimonialCapstoneApplication.Services
         IRepository<int,PersonalDetails> _repository;
         IRepository<int, Member> _memberRepo;
         IMemberRepository _memberRepository;
-        public PersonalDetailsServices(IRepository<int, PersonalDetails> repo,IRepository<int,Member> memberRepo,IMemberRepository memberRepository) : base(repo)
+        IRepository<int, DailyLog> _dailyRepo;
+        public PersonalDetailsServices(IRepository<int, PersonalDetails> repo,IRepository<int,Member> memberRepo,IMemberRepository memberRepository,IRepository<int,DailyLog> dailyRepo) : base(repo)
         {
             _repository = repo; 
             _memberRepo = memberRepo;
             _memberRepository = memberRepository;
+            _dailyRepo = dailyRepo;
         }
 
         public async Task<PersonalDetails> GetPersonalDetailsWithMemberId(int MemberId, string Email, string Role)
@@ -31,7 +33,14 @@ namespace MatrimonialCapstoneApplication.Services
             {
                 if(requestedMember.Membership == Models.Enums.Membershipenum.Premium || member.Email == Email)
                 {
+                    var dailyLogOfRequestedMember = requestedMember.DailyLog;
+                    if(dailyLogOfRequestedMember.CreditsCount == 0 && member.Email != Email)
+                    {
+                        throw new OutOfCreditsException();
+                    }
                     var details =await _repository.Get();
+                    dailyLogOfRequestedMember.CreditsCount -= 1;
+                    await _dailyRepo.Update(dailyLogOfRequestedMember);
                     var result = details.FirstOrDefault(d=>d.MemberId == MemberId);
                     return result;
                 }

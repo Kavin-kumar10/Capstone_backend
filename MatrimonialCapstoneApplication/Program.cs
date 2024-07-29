@@ -86,7 +86,9 @@ namespace MatrimonialCapstoneApplication
 
 
             builder.Services.AddScoped<IRepository<int, Match>, MatchRepository>();
+            builder.Services.AddScoped<IMatchesRepository,MatchRepository>();
             builder.Services.AddScoped<IServices<int, Match>, MatchServices>();
+            builder.Services.AddScoped<IMatchesServices, MatchServices>();  
 
             builder.Services.AddScoped<IRepository<int, Like>, LikeRepository>();
             builder.Services.AddScoped<IServices<int, Like>, LikeServices>();
