@@ -10,12 +10,9 @@ namespace MatrimonialCapstoneApplication.Models
         public int LikeId { get; set; }
         public int LikedById { get; set; }
         public int LikedId { get; set; }
-        public DateTime CreatedAt { get; set; }
+        public DateTime CreatedAt { get; set; } = DateTime.Now;
 
         // Navigation properties
-        [JsonIgnore]
-        public Member? LikedBy { get; set; }
-        [JsonIgnore]
         public Member? Liked { get; set; }
     }
 

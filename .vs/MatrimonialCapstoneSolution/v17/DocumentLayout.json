@@ -3,16 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\VC\\Documents\\Capstone\\MatrimonialCapstoneSolution\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{575CB106-3718-4EA9-9E2A-2B66C63AA00F}|MatrimonialCapstoneApplication\\MatrimonialCapstoneApplication.csproj|c:\\users\\vc\\documents\\capstone\\matrimonialcapstonesolution\\matrimonialcapstoneapplication\\models\\match.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{575CB106-3718-4EA9-9E2A-2B66C63AA00F}|MatrimonialCapstoneApplication\\MatrimonialCapstoneApplication.csproj|solutionrelative:matrimonialcapstoneapplication\\models\\match.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{575CB106-3718-4EA9-9E2A-2B66C63AA00F}|MatrimonialCapstoneApplication\\MatrimonialCapstoneApplication.csproj|c:\\users\\vc\\documents\\capstone\\matrimonialcapstonesolution\\matrimonialcapstoneapplication\\controllers\\likecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{575CB106-3718-4EA9-9E2A-2B66C63AA00F}|MatrimonialCapstoneApplication\\MatrimonialCapstoneApplication.csproj|solutionrelative:matrimonialcapstoneapplication\\controllers\\likecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{575CB106-3718-4EA9-9E2A-2B66C63AA00F}|MatrimonialCapstoneApplication\\MatrimonialCapstoneApplication.csproj|c:\\users\\vc\\documents\\capstone\\matrimonialcapstonesolution\\matrimonialcapstoneapplication\\controllers\\matchescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{575CB106-3718-4EA9-9E2A-2B66C63AA00F}|MatrimonialCapstoneApplication\\MatrimonialCapstoneApplication.csproj|solutionrelative:matrimonialcapstoneapplication\\controllers\\matchescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{575CB106-3718-4EA9-9E2A-2B66C63AA00F}|MatrimonialCapstoneApplication\\MatrimonialCapstoneApplication.csproj|c:\\users\\vc\\documents\\capstone\\matrimonialcapstonesolution\\matrimonialcapstoneapplication\\models\\like.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{575CB106-3718-4EA9-9E2A-2B66C63AA00F}|MatrimonialCapstoneApplication\\MatrimonialCapstoneApplication.csproj|solutionrelative:matrimonialcapstoneapplication\\models\\like.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{575CB106-3718-4EA9-9E2A-2B66C63AA00F}|MatrimonialCapstoneApplication\\MatrimonialCapstoneApplication.csproj|c:\\users\\vc\\documents\\capstone\\matrimonialcapstonesolution\\matrimonialcapstoneapplication\\controllers\\membercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{575CB106-3718-4EA9-9E2A-2B66C63AA00F}|MatrimonialCapstoneApplication\\MatrimonialCapstoneApplication.csproj|solutionrelative:matrimonialcapstoneapplication\\controllers\\membercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{575CB106-3718-4EA9-9E2A-2B66C63AA00F}|MatrimonialCapstoneApplication\\MatrimonialCapstoneApplication.csproj|c:\\users\\vc\\documents\\capstone\\matrimonialcapstonesolution\\matrimonialcapstoneapplication\\controllers\\validatecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{575CB106-3718-4EA9-9E2A-2B66C63AA00F}|MatrimonialCapstoneApplication\\MatrimonialCapstoneApplication.csproj|solutionrelative:matrimonialcapstoneapplication\\controllers\\validatecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{575CB106-3718-4EA9-9E2A-2B66C63AA00F}|MatrimonialCapstoneApplication\\MatrimonialCapstoneApplication.csproj|c:\\users\\vc\\documents\\capstone\\matrimonialcapstonesolution\\matrimonialcapstoneapplication\\models\\dtos\\requestdtos\\likespostrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{575CB106-3718-4EA9-9E2A-2B66C63AA00F}|MatrimonialCapstoneApplication\\MatrimonialCapstoneApplication.csproj|solutionrelative:matrimonialcapstoneapplication\\models\\dtos\\requestdtos\\likespostrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -34,41 +38,54 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Match.cs",
-              "DocumentMoniker": "C:\\Users\\VC\\Documents\\Capstone\\MatrimonialCapstoneSolution\\MatrimonialCapstoneApplication\\Models\\Match.cs",
-              "RelativeDocumentMoniker": "MatrimonialCapstoneApplication\\Models\\Match.cs",
-              "ToolTip": "C:\\Users\\VC\\Documents\\Capstone\\MatrimonialCapstoneSolution\\MatrimonialCapstoneApplication\\Models\\Match.cs",
-              "RelativeToolTip": "MatrimonialCapstoneApplication\\Models\\Match.cs",
-              "ViewState": "AQIAAAUAAAAAAAAAAAAxwAwAAAAAAAAA",
+              "DocumentIndex": 3,
+              "Title": "LikesPostRequestDto.cs",
+              "DocumentMoniker": "C:\\Users\\VC\\Documents\\Capstone\\MatrimonialCapstoneSolution\\MatrimonialCapstoneApplication\\Models\\DTOs\\RequestDTOs\\LikesPostRequestDto.cs",
+              "RelativeDocumentMoniker": "MatrimonialCapstoneApplication\\Models\\DTOs\\RequestDTOs\\LikesPostRequestDto.cs",
+              "ToolTip": "C:\\Users\\VC\\Documents\\Capstone\\MatrimonialCapstoneSolution\\MatrimonialCapstoneApplication\\Models\\DTOs\\RequestDTOs\\LikesPostRequestDto.cs",
+              "RelativeToolTip": "MatrimonialCapstoneApplication\\Models\\DTOs\\RequestDTOs\\LikesPostRequestDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-29T15:40:29.202Z",
+              "WhenOpened": "2024-07-30T17:27:06.176Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "MatchesController.cs",
-              "DocumentMoniker": "C:\\Users\\VC\\Documents\\Capstone\\MatrimonialCapstoneSolution\\MatrimonialCapstoneApplication\\Controllers\\MatchesController.cs",
-              "RelativeDocumentMoniker": "MatrimonialCapstoneApplication\\Controllers\\MatchesController.cs",
-              "ToolTip": "C:\\Users\\VC\\Documents\\Capstone\\MatrimonialCapstoneSolution\\MatrimonialCapstoneApplication\\Controllers\\MatchesController.cs",
-              "RelativeToolTip": "MatrimonialCapstoneApplication\\Controllers\\MatchesController.cs",
-              "ViewState": "AQIAABAAAAAAAAAAAAAgwBsAAAAAAAAA",
+              "Title": "Like.cs",
+              "DocumentMoniker": "C:\\Users\\VC\\Documents\\Capstone\\MatrimonialCapstoneSolution\\MatrimonialCapstoneApplication\\Models\\Like.cs",
+              "RelativeDocumentMoniker": "MatrimonialCapstoneApplication\\Models\\Like.cs",
+              "ToolTip": "C:\\Users\\VC\\Documents\\Capstone\\MatrimonialCapstoneSolution\\MatrimonialCapstoneApplication\\Models\\Like.cs",
+              "RelativeToolTip": "MatrimonialCapstoneApplication\\Models\\Like.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAyAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-29T14:42:31.339Z",
+              "WhenOpened": "2024-07-30T17:22:35.464Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "MemberController.cs",
-              "DocumentMoniker": "C:\\Users\\VC\\Documents\\Capstone\\MatrimonialCapstoneSolution\\MatrimonialCapstoneApplication\\Controllers\\MemberController.cs",
-              "RelativeDocumentMoniker": "MatrimonialCapstoneApplication\\Controllers\\MemberController.cs",
-              "ToolTip": "C:\\Users\\VC\\Documents\\Capstone\\MatrimonialCapstoneSolution\\MatrimonialCapstoneApplication\\Controllers\\MemberController.cs",
-              "RelativeToolTip": "MatrimonialCapstoneApplication\\Controllers\\MemberController.cs",
-              "ViewState": "AQIAACMAAAAAAAAAAAAAAC8AAAAJAAAA",
+              "Title": "ValidateController.cs",
+              "DocumentMoniker": "C:\\Users\\VC\\Documents\\Capstone\\MatrimonialCapstoneSolution\\MatrimonialCapstoneApplication\\Controllers\\ValidateController.cs",
+              "RelativeDocumentMoniker": "MatrimonialCapstoneApplication\\Controllers\\ValidateController.cs",
+              "ToolTip": "C:\\Users\\VC\\Documents\\Capstone\\MatrimonialCapstoneSolution\\MatrimonialCapstoneApplication\\Controllers\\ValidateController.cs",
+              "RelativeToolTip": "MatrimonialCapstoneApplication\\Controllers\\ValidateController.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAABgAAABvAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-29T14:42:30.322Z",
+              "WhenOpened": "2024-07-30T15:09:04.947Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "LikeController.cs",
+              "DocumentMoniker": "C:\\Users\\VC\\Documents\\Capstone\\MatrimonialCapstoneSolution\\MatrimonialCapstoneApplication\\Controllers\\LikeController.cs",
+              "RelativeDocumentMoniker": "MatrimonialCapstoneApplication\\Controllers\\LikeController.cs",
+              "ToolTip": "C:\\Users\\VC\\Documents\\Capstone\\MatrimonialCapstoneSolution\\MatrimonialCapstoneApplication\\Controllers\\LikeController.cs",
+              "RelativeToolTip": "MatrimonialCapstoneApplication\\Controllers\\LikeController.cs",
+              "ViewState": "AQIAAF8AAAAAAAAAAAAgwGoAAAAvAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-30T15:06:59.523Z",
               "EditorCaption": ""
             }
           ]

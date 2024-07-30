@@ -92,6 +92,8 @@ namespace MatrimonialCapstoneApplication
 
             builder.Services.AddScoped<IRepository<int, Like>, LikeRepository>();
             builder.Services.AddScoped<IServices<int, Like>, LikeServices>();
+            builder.Services.AddScoped<ILikeServices, LikeServices>();
+            builder.Services.AddScoped<ILikeRepository, LikeRepository>();
 
             builder.Services.AddScoped<IRepository<int, Locate>, LocateRepository>();
             builder.Services.AddScoped<IServices<int, Locate>, LocateService>();
@@ -107,6 +109,7 @@ namespace MatrimonialCapstoneApplication
             builder.Services.AddScoped<IPersonalDetailServices,PersonalDetailsServices>();
 
             builder.Services.AddScoped<IRepository<int, DailyLog>,DailyLogsRepository>();
+            builder.Services.AddScoped<IDailyLogServices,DailyLogServices>();
 
             builder.Services.AddSwaggerGen();
 

@@ -2,6 +2,7 @@
 using MatrimonialCapstoneApplication.Models.Enums;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 using System.Text.RegularExpressions;
 
 namespace MatrimonialCapstoneApplication.Modals
@@ -34,8 +35,8 @@ namespace MatrimonialCapstoneApplication.Modals
         public DailyLog? DailyLog { get; set; }
         public List<Hobby>? Hobby { get; set; }
         public List<Models.Match>? Matches { get; set; }
-        public List<Like>? LikesGiven { get; set; }
-        public List<Like>? LikesReceived { get; set; }
+        [JsonIgnore]
+        public List<Like>? Likes { get; set; }
         public List<Report>? Reports { get; set; }
     }
 }

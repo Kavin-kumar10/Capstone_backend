@@ -214,24 +214,19 @@ namespace MatrimonialCapstoneApplication.Context
             //Like
 
             modelBuilder.Entity<Like>()
-                .HasOne(l => l.LikedBy)
-                .WithMany(m => m.LikesGiven)
-                .HasForeignKey(l => l.LikedById)
-                .OnDelete(DeleteBehavior.NoAction);
-
-            modelBuilder.Entity<Like>()
                 .HasOne(l => l.Liked)
-                .WithMany(m => m.LikesReceived)
+                .WithMany(m => m.Likes)
                 .HasForeignKey(l => l.LikedId)
                 .OnDelete(DeleteBehavior.NoAction);
 
-            // Optionally, you can use AutoInclude
-            modelBuilder.Entity<Member>()
-                .Navigation(m => m.LikesGiven)
-                .AutoInclude();
 
-            modelBuilder.Entity<Member>()
-                .Navigation(m => m.LikesReceived)
+            // Optionally, you can use AutoInclude
+            //modelBuilder.Entity<Like>()
+            //    .Navigation(l => l.LikedBy)
+            //    .AutoInclude();
+
+            modelBuilder.Entity<Like>()
+                .Navigation(l => l.Liked)
                 .AutoInclude();
 
 

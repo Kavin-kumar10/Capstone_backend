@@ -11,6 +11,7 @@ namespace MatrimonialCapstoneApplication.Models
         [ForeignKey("MemberId")]
         public int MemberId { get; set; }
         public string? FamilyType { get; set; }
+        public string? Mobile {  get; set; }
         public string? FamilyValue { get; set; }
         public string? FamilyStatus { get; set; }
         public string? Education { get; set; }
