@@ -22,6 +22,33 @@ namespace MatrimonialCapstoneApplication.Controllers
             _personaldetailservices = personaldetailservices;
         }
 
+
+        [HttpGet]
+        [Route("GetPersonalDetailByToken")]
+        [Authorize]
+        [ProducesResponseType(typeof(PersonalDetails), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ErrorModel), StatusCodes.Status404NotFound)]
+        public async Task<ActionResult<PersonalDetails>> GetPersonalDetailsWithId()
+        {
+            try
+            {
+                var memberId = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier)?.Value;
+                var result = await _personaldetailservices.GetPersonalDetailsWithToken(int.Parse(memberId));
+                _logger.LogInformation("Getting personal Details using Id");
+                return Ok(result);
+            }
+            catch (NotFoundException nfe)
+            {
+                _logger.LogError("No such Person Found");
+                return BadRequest(new ErrorModel(404, nfe.Message));
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Unknown exceptions found");
+                return BadRequest(new ErrorModel(500, ex.Message));
+            }
+        }
+
         /// <summary>
         /// Get Personal Details of all members
         /// </summary>

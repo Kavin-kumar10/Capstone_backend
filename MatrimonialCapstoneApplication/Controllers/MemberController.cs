@@ -2,8 +2,11 @@
 using MatrimonialCapstoneApplication.Interfaces;
 using MatrimonialCapstoneApplication.Modals;
 using MatrimonialCapstoneApplication.Models;
+using MatrimonialCapstoneApplication.Models.DTOs.RequestDTOs;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 
 namespace MatrimonialCapstoneApplication.Controllers
 {
@@ -13,11 +16,52 @@ namespace MatrimonialCapstoneApplication.Controllers
     {
         private IServices<int, Member> _services;
         ILogger<MemberController> _logger;
-        public MemberController(IServices<int,Member> services, ILogger<MemberController> logger)
+        private IPictureServices _pictureServices;
+
+        public MemberController(IServices<int,Member> services, ILogger<MemberController> logger, IPictureServices pictureServices)
         {
             _services = services;
             _logger = logger;
+            _pictureServices = pictureServices;
         }
+
+        /// <summary>
+        /// Updating profile picture
+        /// </summary>
+        /// <param name="member"></param>
+        /// <returns></returns>
+        [HttpPost]
+        [Authorize]
+        [Route("ProfileUpdate")]
+        [ProducesResponseType(typeof(Member), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ErrorModel), StatusCodes.Status404NotFound)]
+        public async Task<ActionResult<Member>> CreateNewMember([FromForm] ImageRequestDto imagerequestDto)
+        {
+            try
+            {
+                var memberId = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier)?.Value;
+                var imageUrl = await _pictureServices.UploadImage(imagerequestDto);
+                _logger.LogInformation("uploading pictures to the azure");
+                var member = await _services.GetById(int.Parse(memberId));
+                member.ProfilePic = imageUrl.First();
+                var result =  await _services.Update(member);
+                return Ok(result);
+            }
+            catch (UnableToCreateException utce)
+            {
+                _logger.LogError("Unable to create");
+                return BadRequest(new ErrorModel(404, utce.Message));
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Unknown exceptions found");
+                return BadRequest(new ErrorModel(500, ex.Message));
+            }
+        }
+
+
+
+
 
         /// <summary>
         /// Get all the members details
@@ -53,14 +97,44 @@ namespace MatrimonialCapstoneApplication.Controllers
         /// <param name="MemberId"></param>
         /// <returns></returns>
         [HttpGet]
-        [Route("Profile/{MemberId}")]
+        [Route("GetByMemberId")]
         [ProducesResponseType(typeof(Member), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ErrorModel), StatusCodes.Status404NotFound)]
-        public async Task<ActionResult<Member>> GetmyProfile(int MemberId)
+        public async Task<ActionResult<Member>> GetMemberByMemberId(int memberId)
         {
             try
             {
-                var result = await _services.GetById(MemberId);
+                var result = await _services.GetById(memberId);
+                _logger.LogInformation("Get Member Details by Id");
+                return Ok(result);
+            }
+            catch (NotFoundException nfe)
+            {
+                _logger.LogError("No such Members Found");
+                return BadRequest(new ErrorModel(404, nfe.Message));
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Unknown exceptions found");
+                return BadRequest(new ErrorModel(500, ex.Message));
+            }
+        }
+
+        /// <summary>
+        /// Get Member details by Id
+        /// </summary>
+        /// <param name="MemberId"></param>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("Profile")]
+        [ProducesResponseType(typeof(Member), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ErrorModel), StatusCodes.Status404NotFound)]
+        public async Task<ActionResult<Member>> GetmyProfile()
+        {
+            try
+            {
+                var memberId = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier)?.Value;
+                var result = await _services.GetById(int.Parse(memberId));
                 _logger.LogInformation("Get Member Details by Id");
                 return Ok(result);
             }

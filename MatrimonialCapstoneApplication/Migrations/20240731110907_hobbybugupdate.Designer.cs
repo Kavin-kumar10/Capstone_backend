@@ -4,6 +4,7 @@ using MatrimonialCapstoneApplication.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MatrimonialCapstoneApplication.Migrations
 {
     [DbContext(typeof(MatrimonialContext))]
-    partial class MatrimonialContextModelSnapshot : ModelSnapshot
+    [Migration("20240731110907_hobbybugupdate")]
+    partial class hobbybugupdate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -201,7 +203,7 @@ namespace MatrimonialCapstoneApplication.Migrations
                         {
                             DailyLogId = 1,
                             CreditsCount = 5,
-                            Date = new DateTime(2024, 7, 31, 16, 47, 5, 73, DateTimeKind.Local).AddTicks(1770),
+                            Date = new DateTime(2024, 7, 31, 16, 39, 7, 289, DateTimeKind.Local).AddTicks(8085),
                             MemberId = 2
                         });
                 });
@@ -215,6 +217,7 @@ namespace MatrimonialCapstoneApplication.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("MemberId")
+                        .IsRequired()
                         .HasColumnType("int");
 
                     b.HasKey("HobbyId");
@@ -337,7 +340,7 @@ namespace MatrimonialCapstoneApplication.Migrations
                         {
                             MatchId = 1,
                             FromProfileId = 1,
-                            MatchDate = new DateTime(2024, 7, 31, 11, 17, 5, 73, DateTimeKind.Utc).AddTicks(1979),
+                            MatchDate = new DateTime(2024, 7, 31, 11, 9, 7, 289, DateTimeKind.Utc).AddTicks(8182),
                             Message = "Hi, I would like to connect.",
                             Status = "Pending",
                             ToProfileId = 2

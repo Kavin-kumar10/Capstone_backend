@@ -2,6 +2,7 @@
 using EcommerceApplication.Models.DTOs.ReturnDTOs;
 using MatrimonialCapstoneApplication.Interfaces;
 using MatrimonialCapstoneApplication.Modals;
+using MatrimonialCapstoneApplication.Models;
 using MatrimonialCapstoneApplication.Models.Enums;
 using System.Security.Cryptography;
 using System.Text;
@@ -14,13 +15,15 @@ namespace MatrimonialCapstoneApplication.Services
         private readonly IRepository<int, Member> _memRepo;
         private readonly IUserRepository _userRepo;
         private readonly ITokenService _tokenService;
+        private readonly IRepository<int, PersonalDetails> _personalRepo;
 
-        public UserServices(IRepository<int, User> repo, IRepository<int, Member> memRepo, IUserRepository userRepository, ITokenService tokenService)
+        public UserServices(IRepository<int, User> repo, IRepository<int, Member> memRepo, IUserRepository userRepository, ITokenService tokenService,IRepository<int,PersonalDetails> personalRepo)
         {
             _repo = repo;
             _memRepo = memRepo;
             _userRepo = userRepository;
             _tokenService = tokenService;
+            _personalRepo = personalRepo;
         }
         public async Task<LoginReturnDTO> Login(LoginRequestDTO loginRequestDTO)
         {
@@ -65,6 +68,7 @@ namespace MatrimonialCapstoneApplication.Services
 
             User user = new User();
             Member member = new Member();
+            PersonalDetails personalDetails = new PersonalDetails();
             var users = await _repo.Get();
             if (users.FirstOrDefault(u => u.Email == registerRequestDTO.Email) != null)
             {
@@ -81,9 +85,11 @@ namespace MatrimonialCapstoneApplication.Services
                 {
                     throw new Exception("Not created");
                 }
+                personalDetails.MemberId = newMember.MemberId;
                 user.MemberId = newMember.MemberId;
                 user.Name = newMember.Name;
                 var newUser = await _repo.Create(user);
+                var newPersonalDetails = await _personalRepo.Create(personalDetails);
                 if (newUser == null)
                 {
                     await _memRepo.Delete(user.MemberId);

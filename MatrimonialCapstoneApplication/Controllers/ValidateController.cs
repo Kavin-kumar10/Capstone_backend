@@ -1,4 +1,5 @@
 ﻿using MatrimonialCapstoneApplication.Interfaces;
+using MatrimonialCapstoneApplication.Modals;
 using MatrimonialCapstoneApplication.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -11,8 +12,10 @@ namespace MatrimonialCapstoneApplication.Controllers
     public class ValidateController : ControllerBase
     {
         IDailyLogServices _Services;
-        public ValidateController(IDailyLogServices services) {
+        IServices<int, Member> _memberServices;
+        public ValidateController(IDailyLogServices services,IServices<int,Member> memberServices) {
             _Services = services;
+            _memberServices = memberServices;
         }
 
         [HttpGet("validate-token")]
@@ -23,7 +26,11 @@ namespace MatrimonialCapstoneApplication.Controllers
                 if (User.Identity.IsAuthenticated)
                 {
                     var memberId = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier)?.Value;
-                    await _Services.RefreshCount(int.Parse(memberId));
+                    var member = await _memberServices.GetById(int.Parse(memberId));
+                    if(member.Membership == Models.Enums.Membershipenum.Premium)
+                    {
+                        await _Services.RefreshCount(int.Parse(memberId));
+                    }
                     return Ok(new { Authorized = true });
                 }
                 else

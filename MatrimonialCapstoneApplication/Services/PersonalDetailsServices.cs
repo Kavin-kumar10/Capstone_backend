@@ -51,5 +51,12 @@ namespace MatrimonialCapstoneApplication.Services
             }
             throw new NotImplementedException();
         }
+
+        public async Task<PersonalDetails> GetPersonalDetailsWithToken(int MemberId)
+        {
+            var details = await _repository.Get();
+            var result = details.FirstOrDefault(d=>d.MemberId == MemberId);
+            return result;
+        }
     }
 }
