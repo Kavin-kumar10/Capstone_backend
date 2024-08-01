@@ -201,7 +201,7 @@ namespace MatrimonialCapstoneApplication.Migrations
                         {
                             DailyLogId = 1,
                             CreditsCount = 5,
-                            Date = new DateTime(2024, 7, 31, 16, 47, 5, 73, DateTimeKind.Local).AddTicks(1770),
+                            Date = new DateTime(2024, 8, 1, 19, 13, 40, 706, DateTimeKind.Local).AddTicks(970),
                             MemberId = 2
                         });
                 });
@@ -274,13 +274,14 @@ namespace MatrimonialCapstoneApplication.Migrations
                     b.Property<double>("Long")
                         .HasColumnType("float");
 
-                    b.Property<int>("PersonalDetailsId")
+                    b.Property<int?>("PersonalDetailsId")
                         .HasColumnType("int");
 
                     b.HasKey("LocateId");
 
                     b.HasIndex("PersonalDetailsId")
-                        .IsUnique();
+                        .IsUnique()
+                        .HasFilter("[PersonalDetailsId] IS NOT NULL");
 
                     b.ToTable("Locations");
 
@@ -337,7 +338,7 @@ namespace MatrimonialCapstoneApplication.Migrations
                         {
                             MatchId = 1,
                             FromProfileId = 1,
-                            MatchDate = new DateTime(2024, 7, 31, 11, 17, 5, 73, DateTimeKind.Utc).AddTicks(1979),
+                            MatchDate = new DateTime(2024, 8, 1, 13, 43, 40, 706, DateTimeKind.Utc).AddTicks(1064),
                             Message = "Hi, I would like to connect.",
                             Status = "Pending",
                             ToProfileId = 2
@@ -551,9 +552,7 @@ namespace MatrimonialCapstoneApplication.Migrations
                 {
                     b.HasOne("MatrimonialCapstoneApplication.Models.PersonalDetails", "PersonalDetails")
                         .WithOne("Location")
-                        .HasForeignKey("MatrimonialCapstoneApplication.Models.Locate", "PersonalDetailsId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("MatrimonialCapstoneApplication.Models.Locate", "PersonalDetailsId");
 
                     b.Navigation("PersonalDetails");
                 });

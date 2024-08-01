@@ -12,18 +12,28 @@ namespace MatrimonialCapstoneApplication.Services
         IRepository<int, Member> _memberRepo;
         IMemberRepository _memberRepository;
         IRepository<int, DailyLog> _dailyRepo;
-        public PersonalDetailsServices(IRepository<int, PersonalDetails> repo,IRepository<int,Member> memberRepo,IMemberRepository memberRepository,IRepository<int,DailyLog> dailyRepo) : base(repo)
+        IMatchesServices _matchesServices;
+        public PersonalDetailsServices(IRepository<int, PersonalDetails> repo,IRepository<int,Member> memberRepo,IMemberRepository memberRepository,IRepository<int,DailyLog> dailyRepo,IMatchesServices matchesServices) : base(repo)
         {
             _repository = repo; 
             _memberRepo = memberRepo;
             _memberRepository = memberRepository;
             _dailyRepo = dailyRepo;
+            _matchesServices = matchesServices;
         }
 
         public async Task<PersonalDetails> GetPersonalDetailsWithMemberId(int MemberId, string Email, string Role)
         {
             var member = await _memberRepo.Get(MemberId);
             var requestedMember = await _memberRepository.Get(Email);
+            var matchDetails = await _matchesServices.GetMatchesWithMemberId(requestedMember.MemberId);
+            var matchedProfile = matchDetails.FirstOrDefault(match=>(match.FromProfileId == MemberId || match.ToProfileId == MemberId) && match.Status == "Matched");
+            if(matchedProfile != null)
+            {
+                var details = await _repository.Get();
+                var result = details.FirstOrDefault(d => d.MemberId == MemberId);
+                return result;
+            }
             Console.WriteLine(Role);
             if (member == null || requestedMember == null)
             {
@@ -34,7 +44,7 @@ namespace MatrimonialCapstoneApplication.Services
                 if(requestedMember.Membership == Models.Enums.Membershipenum.Premium || member.Email == Email)
                 {
                     var dailyLogOfRequestedMember = requestedMember.DailyLog;
-                    if(dailyLogOfRequestedMember.CreditsCount == 0 && member.Email != Email)
+                    if(dailyLogOfRequestedMember.CreditsCount <= 0 && member.Email != Email)
                     {
                         throw new OutOfCreditsException();
                     }

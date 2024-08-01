@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MatrimonialCapstoneApplication.Migrations
 {
     [DbContext(typeof(MatrimonialContext))]
-    [Migration("20240730144638_likesupdate")]
-    partial class likesupdate
+    [Migration("20240801134340_initialAzure")]
+    partial class initialAzure
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -203,7 +203,7 @@ namespace MatrimonialCapstoneApplication.Migrations
                         {
                             DailyLogId = 1,
                             CreditsCount = 5,
-                            Date = new DateTime(2024, 7, 30, 20, 16, 38, 310, DateTimeKind.Local).AddTicks(2933),
+                            Date = new DateTime(2024, 8, 1, 19, 13, 40, 706, DateTimeKind.Local).AddTicks(970),
                             MemberId = 2
                         });
                 });
@@ -214,10 +214,9 @@ namespace MatrimonialCapstoneApplication.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("HobbyName")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("MemberId")
+                    b.Property<int?>("MemberId")
                         .HasColumnType("int");
 
                     b.HasKey("HobbyId");
@@ -277,13 +276,14 @@ namespace MatrimonialCapstoneApplication.Migrations
                     b.Property<double>("Long")
                         .HasColumnType("float");
 
-                    b.Property<int>("PersonalDetailsId")
+                    b.Property<int?>("PersonalDetailsId")
                         .HasColumnType("int");
 
                     b.HasKey("LocateId");
 
                     b.HasIndex("PersonalDetailsId")
-                        .IsUnique();
+                        .IsUnique()
+                        .HasFilter("[PersonalDetailsId] IS NOT NULL");
 
                     b.ToTable("Locations");
 
@@ -340,7 +340,7 @@ namespace MatrimonialCapstoneApplication.Migrations
                         {
                             MatchId = 1,
                             FromProfileId = 1,
-                            MatchDate = new DateTime(2024, 7, 30, 14, 46, 38, 310, DateTimeKind.Utc).AddTicks(3191),
+                            MatchDate = new DateTime(2024, 8, 1, 13, 43, 40, 706, DateTimeKind.Utc).AddTicks(1064),
                             Message = "Hi, I would like to connect.",
                             Status = "Pending",
                             ToProfileId = 2
@@ -554,9 +554,7 @@ namespace MatrimonialCapstoneApplication.Migrations
                 {
                     b.HasOne("MatrimonialCapstoneApplication.Models.PersonalDetails", "PersonalDetails")
                         .WithOne("Location")
-                        .HasForeignKey("MatrimonialCapstoneApplication.Models.Locate", "PersonalDetailsId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("MatrimonialCapstoneApplication.Models.Locate", "PersonalDetailsId");
 
                     b.Navigation("PersonalDetails");
                 });

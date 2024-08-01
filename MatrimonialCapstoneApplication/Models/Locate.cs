@@ -11,8 +11,8 @@ namespace MatrimonialCapstoneApplication.Models
         public double Lat {  get; set; }
         public double Long {  get; set; }
         [ForeignKey("PersonalDetailsId")]
-        public int PersonalDetailsId { get; set; }
+        public int? PersonalDetailsId { get; set; }
         [JsonIgnore]
-        public PersonalDetails PersonalDetails { get; set; }
+        public PersonalDetails? PersonalDetails { get; set; }
     }
 }

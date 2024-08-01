@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace MatrimonialCapstoneApplication.Migrations
 {
-    public partial class initial : Migration
+    public partial class initialAzure : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -48,6 +48,7 @@ namespace MatrimonialCapstoneApplication.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     MemberId = table.Column<int>(type: "int", nullable: false),
                     FamilyType = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Mobile = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     FamilyValue = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     FamilyStatus = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Education = table.Column<string>(type: "nvarchar(max)", nullable: true),
@@ -101,8 +102,8 @@ namespace MatrimonialCapstoneApplication.Migrations
                 columns: table => new
                 {
                     HobbyId = table.Column<int>(type: "int", nullable: false),
-                    HobbyName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    MemberId = table.Column<int>(type: "int", nullable: false)
+                    HobbyName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    MemberId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -128,11 +129,6 @@ namespace MatrimonialCapstoneApplication.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Likes", x => x.LikeId);
-                    table.ForeignKey(
-                        name: "FK_Likes_Members_LikedById",
-                        column: x => x.LikedById,
-                        principalTable: "Members",
-                        principalColumn: "MemberId");
                     table.ForeignKey(
                         name: "FK_Likes_Members_LikedId",
                         column: x => x.LikedId,
@@ -245,7 +241,7 @@ namespace MatrimonialCapstoneApplication.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Lat = table.Column<double>(type: "float", nullable: false),
                     Long = table.Column<double>(type: "float", nullable: false),
-                    PersonalDetailsId = table.Column<int>(type: "int", nullable: false)
+                    PersonalDetailsId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -254,8 +250,7 @@ namespace MatrimonialCapstoneApplication.Migrations
                         name: "FK_Locations_PersonalDetails_PersonalDetailsId",
                         column: x => x.PersonalDetailsId,
                         principalTable: "PersonalDetails",
-                        principalColumn: "PersonalDetailsId",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "PersonalDetailsId");
                 });
 
             migrationBuilder.CreateTable(
@@ -290,13 +285,13 @@ namespace MatrimonialCapstoneApplication.Migrations
 
             migrationBuilder.InsertData(
                 table: "PersonalDetails",
-                columns: new[] { "PersonalDetailsId", "AnnualIncome", "Education", "FamilyStatus", "FamilyType", "FamilyValue", "MemberId", "ProfessionName" },
-                values: new object[] { 1, "60000", "Bachelor's in Computer Science", "Upper", "Nuclear", "Traditional", 0, "Software Engineer" });
+                columns: new[] { "PersonalDetailsId", "AnnualIncome", "Education", "FamilyStatus", "FamilyType", "FamilyValue", "MemberId", "Mobile", "ProfessionName" },
+                values: new object[] { 1, "60000", "Bachelor's in Computer Science", "Upper", "Nuclear", "Traditional", 0, null, "Software Engineer" });
 
             migrationBuilder.InsertData(
                 table: "DailyLogs",
                 columns: new[] { "DailyLogId", "CreditsCount", "Date", "MemberId" },
-                values: new object[] { 1, 5, new DateTime(2024, 7, 28, 10, 57, 22, 575, DateTimeKind.Local).AddTicks(9421), 2 });
+                values: new object[] { 1, 5, new DateTime(2024, 8, 1, 19, 13, 40, 706, DateTimeKind.Local).AddTicks(970), 2 });
 
             migrationBuilder.InsertData(
                 table: "Hobbies",
@@ -315,7 +310,7 @@ namespace MatrimonialCapstoneApplication.Migrations
             migrationBuilder.InsertData(
                 table: "Match",
                 columns: new[] { "MatchId", "FromProfileId", "MatchDate", "MemberId", "Message", "Status", "ToProfileId" },
-                values: new object[] { 1, 1, new DateTime(2024, 7, 28, 5, 27, 22, 575, DateTimeKind.Utc).AddTicks(9584), null, "Hi, I would like to connect.", "Pending", 2 });
+                values: new object[] { 1, 1, new DateTime(2024, 8, 1, 13, 43, 40, 706, DateTimeKind.Utc).AddTicks(1064), null, "Hi, I would like to connect.", "Pending", 2 });
 
             migrationBuilder.InsertData(
                 table: "Pictures",
@@ -338,11 +333,6 @@ namespace MatrimonialCapstoneApplication.Migrations
                 unique: true);
 
             migrationBuilder.CreateIndex(
-                name: "IX_Likes_LikedById",
-                table: "Likes",
-                column: "LikedById");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_Likes_LikedId",
                 table: "Likes",
                 column: "LikedId");
@@ -351,7 +341,8 @@ namespace MatrimonialCapstoneApplication.Migrations
                 name: "IX_Locations_PersonalDetailsId",
                 table: "Locations",
                 column: "PersonalDetailsId",
-                unique: true);
+                unique: true,
+                filter: "[PersonalDetailsId] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Match_FromProfileId",
