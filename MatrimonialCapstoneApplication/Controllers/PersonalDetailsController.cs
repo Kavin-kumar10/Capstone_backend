@@ -1,4 +1,6 @@
 ﻿using MatrimonialCapstoneApplication.Exceptions;
+using MatrimonialCapstoneApplication.Exceptions.AuthExceptions;
+using MatrimonialCapstoneApplication.Exceptions.SubscriptionException;
 using MatrimonialCapstoneApplication.Interfaces;
 using MatrimonialCapstoneApplication.Models;
 using Microsoft.AspNetCore.Authorization;
@@ -105,10 +107,20 @@ namespace MatrimonialCapstoneApplication.Controllers
                 _logger.LogInformation("Getting personal Details using Id");
                 return Ok(result);
             }
-            catch (NotFoundException nfe)
+            catch (UserNotFoundException unfe)
             {
-                _logger.LogError("No such Person Found");
-                return BadRequest(new ErrorModel(404, nfe.Message));
+                _logger.LogError("User not found exception");
+                return BadRequest(new ErrorModel(404, unfe.Message));
+            }
+            catch(OutOfCreditsException ofce)
+            {
+                _logger.LogError("User Out of credits");
+                return BadRequest(new ErrorModel(404,ofce.Message));
+            }
+            catch(NoPremiumSubscriptionException npse)
+            {
+                _logger.LogError("No premium subscription");
+                return BadRequest(new ErrorModel(402,npse.Message));    
             }
             catch (Exception ex)
             {

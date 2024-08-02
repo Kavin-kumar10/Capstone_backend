@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MatrimonialCapstoneApplication")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9d31ad953d6336ce2b16b0e5c8bedac5826b58ff")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+036e29aa099b5c87c0eaf3785632533972e58d81")]
 [assembly: System.Reflection.AssemblyProductAttribute("MatrimonialCapstoneApplication")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MatrimonialCapstoneApplication")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

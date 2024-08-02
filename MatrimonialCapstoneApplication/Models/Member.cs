@@ -28,7 +28,7 @@ namespace MatrimonialCapstoneApplication.Modals
         public string? MaritalStatus { get; set; }
         public string? Disabilities { get; set; }
         public bool? AllowLocation { get; set; }
-        public bool? IsVerified { get; set; }
+        public bool? IsVerified { get; set; } = true;
         public string? ProfilePic { get; set; }
 
         //Navigation
