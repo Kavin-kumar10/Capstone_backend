@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "IqUYuPp69tjDdArfgXXo61YgRkTHCm8c90XemEtwqKdvIbTO7KCsH1PYPFd0wMgc5mm/S3Y29iiZ+aaJMawc/w==",
+  "dgSpecHash": "O1GctixxuJ0=",
   "success": true,
   "projectFilePath": "C:\\Users\\VC\\Documents\\Capstone\\MatrimonialCapstoneSolution\\MatrimonialCapstoneTest\\MatrimonialCapstoneTest.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\VC\\.nuget\\packages\\azure.core\\1.41.0\\azure.core.1.41.0.nupkg.sha512",
     "C:\\Users\\VC\\.nuget\\packages\\azure.identity\\1.12.0\\azure.identity.1.12.0.nupkg.sha512",
+    "C:\\Users\\VC\\.nuget\\packages\\azure.security.keyvault.secrets\\4.6.0\\azure.security.keyvault.secrets.4.6.0.nupkg.sha512",
     "C:\\Users\\VC\\.nuget\\packages\\azure.storage.blobs\\12.21.0\\azure.storage.blobs.12.21.0.nupkg.sha512",
     "C:\\Users\\VC\\.nuget\\packages\\azure.storage.common\\12.20.0\\azure.storage.common.12.20.0.nupkg.sha512",
     "C:\\Users\\VC\\.nuget\\packages\\castle.core\\5.1.1\\castle.core.5.1.1.nupkg.sha512",

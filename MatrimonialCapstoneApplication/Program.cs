@@ -1,3 +1,5 @@
+using Azure.Identity;
+using Azure.Security.KeyVault.Secrets;
 using MatrimonialCapstoneApplication.Context;
 using MatrimonialCapstoneApplication.Interfaces;
 using MatrimonialCapstoneApplication.Modals;
@@ -5,6 +7,7 @@ using MatrimonialCapstoneApplication.Models;
 using MatrimonialCapstoneApplication.Repositories;
 using MatrimonialCapstoneApplication.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.DataProtection;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
@@ -15,7 +18,7 @@ namespace MatrimonialCapstoneApplication
 {
     public class Program
     {
-        public static void Main(string[] args)
+        public async static Task Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
 
@@ -68,7 +71,29 @@ namespace MatrimonialCapstoneApplication
 
             #endregion
 
-            builder.Services.AddDbContext<MatrimonialContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("defaultString")));
+
+            //const string secretName = "mydefaultstring";
+            //var keyVaultName = "kavincapstonematrimonial";
+            //var kvUri = $"https://{keyVaultName}.vault.azure.net";
+
+            //var client = new SecretClient(new Uri(kvUri), new DefaultAzureCredential());
+
+            //Console.WriteLine($"Retrieving your secret from {keyVaultName}.");
+            //var secret = await client.GetSecretAsync(secretName);
+            //Console.WriteLine($"Your secret is '{secret.Value.Value}'.");
+
+            builder.Services.AddDbContext<MatrimonialContext>(options => {
+                options.UseSqlServer(builder.Configuration.GetConnectionString("defaultString"),
+                sqlServerOptionsAction: sqlOptions =>
+                {
+                    sqlOptions.EnableRetryOnFailure(
+                        maxRetryCount: 10,
+                        maxRetryDelay: TimeSpan.FromSeconds(5),
+                        errorNumbersToAdd: null
+                    );
+                });
+            });
+            
             builder.Services.AddScoped<ITokenService, TokenService>();
             builder.Services.AddScoped<IActivateServices, ActivateServices>();
 

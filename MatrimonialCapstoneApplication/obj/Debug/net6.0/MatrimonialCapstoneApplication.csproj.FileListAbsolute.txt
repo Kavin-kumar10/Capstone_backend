@@ -78,6 +78,7 @@ C:\Users\VC\Documents\Capstone\MatrimonialCapstoneSolution\MatrimonialCapstoneAp
 C:\Users\VC\Documents\Capstone\MatrimonialCapstoneSolution\MatrimonialCapstoneApplication\bin\Debug\net6.0\MatrimonialCapstoneApplication.pdb
 C:\Users\VC\Documents\Capstone\MatrimonialCapstoneSolution\MatrimonialCapstoneApplication\bin\Debug\net6.0\Azure.Core.dll
 C:\Users\VC\Documents\Capstone\MatrimonialCapstoneSolution\MatrimonialCapstoneApplication\bin\Debug\net6.0\Azure.Identity.dll
+C:\Users\VC\Documents\Capstone\MatrimonialCapstoneSolution\MatrimonialCapstoneApplication\bin\Debug\net6.0\Azure.Security.KeyVault.Secrets.dll
 C:\Users\VC\Documents\Capstone\MatrimonialCapstoneSolution\MatrimonialCapstoneApplication\bin\Debug\net6.0\Azure.Storage.Blobs.dll
 C:\Users\VC\Documents\Capstone\MatrimonialCapstoneSolution\MatrimonialCapstoneApplication\bin\Debug\net6.0\Azure.Storage.Common.dll
 C:\Users\VC\Documents\Capstone\MatrimonialCapstoneSolution\MatrimonialCapstoneApplication\bin\Debug\net6.0\Humanizer.dll

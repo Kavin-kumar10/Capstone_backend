@@ -36,7 +36,7 @@ namespace MatrimonialCapstoneTest.RepositoryTest
         public async Task Add_User_PassTest()
         {
             //Arrange
-            User entity = new User() { MemberId = 104,Email="kavinkumar.prof@gmail.com", Password = Encoding.UTF8.GetBytes("yourPassword"), HashedPassword = Encoding.UTF8.GetBytes("yourPassword"), Status = "Active" };
+            User entity = new User() { Name="kavin", MemberId = 104,Email="kavinkumar.prof@gmail.com", Password = Encoding.UTF8.GetBytes("yourPassword"), HashedPassword = Encoding.UTF8.GetBytes("yourPassword"), Status = "Active" };
             //Action
             var result = await _repo.Create(entity);
             //Assert
@@ -50,7 +50,7 @@ namespace MatrimonialCapstoneTest.RepositoryTest
             try
             {
                 //Arrange
-                User entity = new User() { MemberId = 101, Email = "kavinkumar.prof@gmail.com", Password = Encoding.UTF8.GetBytes("yourPassword"), HashedPassword = Encoding.UTF8.GetBytes("yourPassword"), Status = "Active" };
+                User entity = new User() { Name="kavin", MemberId = 101, Email = "kavinkumar.prof@gmail.com", Password = Encoding.UTF8.GetBytes("yourPassword"), HashedPassword = Encoding.UTF8.GetBytes("yourPassword"), Status = "Active" };
                 //Action
                 var result = await _repo.Create(entity);
             }
@@ -65,8 +65,8 @@ namespace MatrimonialCapstoneTest.RepositoryTest
         public async Task Get_Users_PassTest()
         {
             //Arrange
-            User entity = new User() { MemberId = 101, Email = "kavinkumar.prof@gmail.com", Password = Encoding.UTF8.GetBytes("yourPassword"), HashedPassword = Encoding.UTF8.GetBytes("yourPassword"), Status = "Active" };
-            _repo.Create(entity);
+            User entity = new User() {Name = "kavin", MemberId = 101, Email = "kavinkumar.prof@gmail.com", Password = Encoding.UTF8.GetBytes("yourPassword"), HashedPassword = Encoding.UTF8.GetBytes("yourPassword"), Status = "Active" };
+            await _repo.Create(entity);
 
             var result = await _repo.Get();
             Assert.That(result.Count, Is.GreaterThan(0));
@@ -76,7 +76,7 @@ namespace MatrimonialCapstoneTest.RepositoryTest
         public async Task Get_Users_byId_PassTest()
         {
             //Arrange
-            User entity = new User() { MemberId = 101, Email = "kavinkumar.prof@gmail.com", Password = Encoding.UTF8.GetBytes("yourPassword"), HashedPassword = Encoding.UTF8.GetBytes("yourPassword") };
+            User entity = new User() {Name="kavin", MemberId = 101, Email = "kavinkumar.prof@gmail.com", Password = Encoding.UTF8.GetBytes("yourPassword"), HashedPassword = Encoding.UTF8.GetBytes("yourPassword") };
             _repo.Create(entity);
 
 
@@ -101,7 +101,7 @@ namespace MatrimonialCapstoneTest.RepositoryTest
         public async Task Update_User_PassTest()
         {
             //Arrange
-            User entity = new User() { MemberId = 101, Email = "kavinkumar.prof@gmail.com", Password = Encoding.UTF8.GetBytes("yourPassword"), HashedPassword = Encoding.UTF8.GetBytes("yourPassword"), Status = "Active" };
+            User entity = new User() { Name="kavin", MemberId = 101, Email = "kavinkumar.prof@gmail.com", Password = Encoding.UTF8.GetBytes("yourPassword"), HashedPassword = Encoding.UTF8.GetBytes("yourPassword"), Status = "Active" };
             await _repo.Create(entity);
 
             //Action
@@ -117,7 +117,7 @@ namespace MatrimonialCapstoneTest.RepositoryTest
             try
             {
                 //Arrange
-                User entity = new User() { MemberId = 106, Email = "kavinkumar.prof@gmail.com", Password = Encoding.UTF8.GetBytes("yourPassword"), HashedPassword = Encoding.UTF8.GetBytes("yourPassword"), Status = "Active" };
+                User entity = new User() { Name="kavin",MemberId = 106, Email = "kavinkumar.prof@gmail.com", Password = Encoding.UTF8.GetBytes("yourPassword"), HashedPassword = Encoding.UTF8.GetBytes("yourPassword"), Status = "Active" };
                 //Action
                 var result = await _repo.Update(entity);
             }
@@ -132,7 +132,7 @@ namespace MatrimonialCapstoneTest.RepositoryTest
         public async Task Delete_User_PassTest()
         {
             //Arrange
-            User entity = new User() { MemberId = 101, Email = "kavinkumar.prof@gmail.com", Password = Encoding.UTF8.GetBytes("yourPassword"), HashedPassword = Encoding.UTF8.GetBytes("yourPassword"), Status = "Active" };
+            User entity = new User() {Name = "kavin", MemberId = 101, Email = "kavinkumar.prof@gmail.com", Password = Encoding.UTF8.GetBytes("yourPassword"), HashedPassword = Encoding.UTF8.GetBytes("yourPassword"), Status = "Active" };
             _repo.Create(entity);
             //Action
             var result = await _repo.Delete(101);

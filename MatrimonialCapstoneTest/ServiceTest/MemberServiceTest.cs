@@ -35,6 +35,25 @@ namespace MatrimonialCapstoneTest.ServiceTest
         }
 
         [Test]
+        public async Task CreateMultiple_CreatesEntity()
+        {
+            var member = new Member { MemberId = 101, Name = "John Doe", Email = "John@gmail.com" };
+            var member2 = new Member { MemberId = 102, Name = "John", Email = "Johnson@gmail.com" };
+
+            _mockRepo.Setup(repo => repo.Create(member)).ReturnsAsync(member);
+            _mockRepo.Setup(repo => repo.Create(member2)).ReturnsAsync(member2);
+
+            IList<Member> memberlist = new List<Member>();
+            memberlist.Add(member);
+            memberlist.Add(member2);
+
+            var result = await _memberServices.CreateMultiple(memberlist);
+
+            Assert.NotNull(result);
+            Assert.AreEqual(member.MemberId, result[0].MemberId);
+        }
+
+        [Test]
         public async Task Create_CreatesEntity()
         {
             var member = new Member { MemberId = 1, Name = "John Doe", Email = "John@gmail.com" };

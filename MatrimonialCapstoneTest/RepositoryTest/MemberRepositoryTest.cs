@@ -32,7 +32,7 @@ namespace MatrimonialCapstoneTest.RepositoryTest
         [Test]
         public async Task Create_AddsEntityToContext()
         {
-            var member = new Member { MemberId = 1, Name = "John Doe", Email = "John@gmail.com" };
+            var member = new Member { MemberId = 101, Name = "John Doe", Email = "John@gmail.com" };
 
             await _repository.Create(member);
 
@@ -45,7 +45,7 @@ namespace MatrimonialCapstoneTest.RepositoryTest
         [Test]
         public async Task Delete_RemovesEntityFromContext()
         {
-            var member = new Member { MemberId = 1, Name = "John Doe", Email = "John@gmail.com" };
+            var member = new Member { MemberId = 101, Name = "John Doe", Email = "John@gmail.com" };
             await _repository.Create(member);
 
             var deletedMember = await _repository.Delete(member.MemberId);
@@ -61,8 +61,8 @@ namespace MatrimonialCapstoneTest.RepositoryTest
         {
             var members = new List<Member>
             {
-                new Member { MemberId = 1, Name = "John Doe", Email = "John@gmail.com" },
-                new Member { MemberId = 2, Name = "Jane Doe", Email = "John@gmail.com" }
+                new Member { MemberId = 101, Name = "John Doe", Email = "John@gmail.com" },
+                new Member { MemberId = 102, Name = "Jane Doe", Email = "John@gmail.com" }
             };
 
             foreach (var member in members)
@@ -72,13 +72,13 @@ namespace MatrimonialCapstoneTest.RepositoryTest
 
             var result = await _repository.Get();
 
-            Assert.AreEqual(2, result.Count());
+            Assert.AreEqual(4, result.Count());
         }
 
         [Test]
         public async Task Update_UpdatesEntityInContext()
         {
-            var member = new Member { MemberId = 1, Name = "John Doe", Email = "John@gmail.com" };
+            var member = new Member { MemberId = 101, Name = "John Doe", Email = "John@gmail.com" };
             await _repository.Create(member);
 
             member.Name = "John Updated";
