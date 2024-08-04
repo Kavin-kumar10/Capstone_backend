@@ -33,8 +33,16 @@ namespace MatrimonialCapstoneApplication.Controllers
                     {
                         await _Services.RefreshCount(int.Parse(memberId));
                     }
-                    _logger.LogInformation("User authenticated");
-                    return Ok(new { Authorized = true });
+                    if (member.Role == Models.Enums.RoleEnum.Admin)
+                    {
+                        _logger.LogInformation("Admin authenticated");
+                        return Ok(new { Authorized = true, role = "admin" });
+                    }
+                    else
+                    {
+                        _logger.LogInformation("User authenticated");
+                        return Ok(new { Authorized = true, role = "user" });
+                    }
                 }
                 else
                 {
