@@ -83,8 +83,11 @@ namespace MatrimonialCapstoneApplication.Services
             ActivateReturnDTO returnDTO = new ActivateReturnDTO();
             var reqUser = await _userRepo.Get(MemberId);
             var reqMember = await _memRepo.Get(MemberId);
+
             if (reqUser != null && reqMember != null)
             {
+                reqMember.IsVerified = false;
+                await _memRepo.Update(reqMember);
                 reqUser.Status = "Disabled";
                 var res = await _userRepo.Update(reqUser);
                 returnDTO.Id = res.MemberId;
