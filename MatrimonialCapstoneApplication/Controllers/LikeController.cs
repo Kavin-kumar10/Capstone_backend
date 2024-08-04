@@ -1,4 +1,5 @@
 ﻿using MatrimonialCapstoneApplication.Exceptions;
+using MatrimonialCapstoneApplication.Exceptions.LikeDuplicateExceptions;
 using MatrimonialCapstoneApplication.Interfaces;
 using MatrimonialCapstoneApplication.Models;
 using MatrimonialCapstoneApplication.Models.DTOs.RequestDTOs;
@@ -93,6 +94,7 @@ namespace MatrimonialCapstoneApplication.Controllers
         [HttpPost]
         [Authorize]
         [ProducesResponseType(typeof(Like), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ErrorModel), StatusCodes.Status409Conflict)]
         [ProducesResponseType(typeof(ErrorModel), StatusCodes.Status404NotFound)]
         public async Task<ActionResult<Like>> PostLike(int LikeMemberId)
         {
@@ -109,6 +111,11 @@ namespace MatrimonialCapstoneApplication.Controllers
                 var result = await _services.Create(newlike);
                 _logger.LogInformation("Created new Like");
                 return Ok(result);
+            }
+            catch(LikeDuplicateException lde)
+            {
+                _logger.LogError("Like Already found Exception");
+                return BadRequest(new ErrorModel(409,lde.Message));
             }
             catch (UnableToCreateException utce)
             {

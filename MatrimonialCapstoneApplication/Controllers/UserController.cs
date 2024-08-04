@@ -13,10 +13,12 @@ namespace MatrimonialCapstoneApplication.Controllers
     public class UserController : ControllerBase
     {
         private IUserServices _service;
+        private ILogger<UserController> _logger;
 
-        public UserController(IUserServices service)
+        public UserController(IUserServices service, ILogger<UserController> logger)
         {
             _service = service;
+            _logger = logger;
         }
 
         [HttpPost]
@@ -28,10 +30,12 @@ namespace MatrimonialCapstoneApplication.Controllers
             try
             {
                 var result = await _service.Register(registerRequestDTO);
+                _logger.LogInformation("Registered new user");
                 return Ok(result);
             }
             catch (Exception ex)
             {
+                _logger.LogError(ex.Message);
                 return BadRequest(new ErrorModel(500, ex.Message));
             }
         }
@@ -45,10 +49,12 @@ namespace MatrimonialCapstoneApplication.Controllers
             try
             {
                 var result = await _service.Login(loginRequestDTO);
+                _logger.LogInformation("User Logged In "+ loginRequestDTO.Email);
                 return Ok(result);
             }
             catch (Exception ex)
             {
+                _logger.LogError(ex.Message);
                 return BadRequest(new ErrorModel(500, ex.Message));
             }
         }

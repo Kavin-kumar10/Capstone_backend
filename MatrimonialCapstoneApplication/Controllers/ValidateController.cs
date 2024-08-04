@@ -13,9 +13,11 @@ namespace MatrimonialCapstoneApplication.Controllers
     {
         IDailyLogServices _Services;
         IServices<int, Member> _memberServices;
-        public ValidateController(IDailyLogServices services,IServices<int,Member> memberServices) {
+        ILogger<ValidateController> _logger;
+        public ValidateController(IDailyLogServices services,IServices<int,Member> memberServices,ILogger<ValidateController> logger) {
             _Services = services;
             _memberServices = memberServices;
+            _logger = logger;
         }
 
         [HttpGet("validate-token")]
@@ -31,15 +33,18 @@ namespace MatrimonialCapstoneApplication.Controllers
                     {
                         await _Services.RefreshCount(int.Parse(memberId));
                     }
+                    _logger.LogInformation("User authenticated");
                     return Ok(new { Authorized = true });
                 }
                 else
                 {
+                    _logger.LogInformation("User unAuthorized");
                     return Unauthorized(new { Authorized = false });
                 }
             }
             catch (Exception e)
             {
+                _logger.LogError(e.Message);
                 return BadRequest(new ErrorModel(500,e.Message));
             }
         }

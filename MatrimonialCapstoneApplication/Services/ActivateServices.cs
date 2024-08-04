@@ -54,6 +54,7 @@ namespace MatrimonialCapstoneApplication.Services
                 }
                 reqMember.Role = Role;
                 reqMember.Membership = plan;
+                reqMember.IsVerified = true;
                 await _memRepo.Update(reqMember);
                 returnDTO.Role = Role;
                 returnDTO.Membership = plan;

@@ -38,6 +38,7 @@ namespace MatrimonialCapstoneApplication.Controllers
             }
             catch (Exception ex)
             {
+                _logger.LogError(ex.Message);
                 return BadRequest(new ErrorModel(404, ex.Message));
             }
         }
@@ -56,6 +57,7 @@ namespace MatrimonialCapstoneApplication.Controllers
             }
             catch (Exception ex)
             {
+                _logger.LogError(ex.Message);
                 return BadRequest(new ErrorModel(404, ex.Message));
             }
         }
@@ -81,10 +83,12 @@ namespace MatrimonialCapstoneApplication.Controllers
             }
             catch(UnableToUploadException utue)
             {
+                _logger.LogError("Unable to upload");
                 return BadRequest(new ErrorModel(500,utue.Message));
             }
             catch (Exception ex)
             {
+                _logger.LogError($"Error {ex.Message}");
                 return BadRequest(new ErrorModel(404, ex.Message));
             }
         }
